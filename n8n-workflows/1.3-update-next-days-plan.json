@@ -1,0 +1,1284 @@
+{
+  "updatedAt": "2026-10-24T12:35:39.000Z",
+  "createdAt": "2026-10-24T11:49:05.134Z",
+  "id": "fb2v2ReplanLite01",
+  "name": "1.3 Update the next days' plan from the feedback",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "id": "1e1a2155-1e58-54b3-a22a-deb9410f8985",
+      "name": "Test with sample",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        500
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "6f5df2c9-2415-54d7-9320-29d6ae50e7d8",
+      "name": "Called by intake",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        300
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "985dad38-37fd-5999-bb69-af561c7ad939",
+      "name": "Sample: Day 2, Partly",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        200,
+        500
+      ],
+      "parameters": {
+        "jsCode": "// Feedback 1's hand-off for the sample call: Day 2, Partly, Group B confused by zero in the middle.\nreturn [{ json: {\"teacher_email\": \"rishabhrawat35@gmail.com\", \"sheet_id\": \"1AIgwO8j8q54vOO9ExB1_wmCjnAigvnY1Pdds23mpP4Y\", \"sheet_url\": \"https://docs.google.com/spreadsheets/d/1AIgwO8j8q54vOO9ExB1_wmCjnAigvnY1Pdds23mpP4Y/edit\", \"sheet_title\": \"Plan\", \"sheet_gid\": 1590361380, \"headers\": [\"Day\", \"Topic\", \"Group A today\", \"Group B today\", \"Group C today\", \"Plan\", \"Plan status\", \"Original plan\", \"Completed\", \"What went well\", \"What went wrong\", \"How to improve\", \"What is left\", \"Reported on\", \"Feedback (JSON)\"], \"rows\": [{\"row_number\": 2, \"day\": \"1\", \"topic\": \"T01 Numbers and Place Value\", \"group_a\": \"Stone counting race\", \"group_b\": \"Hundreds tens ones with bundles\", \"group_c\": \"Lakh place value chart\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1d__No6Ni10NB6DP9BRDZhp4pA40zIHtwoE5MejYcQqA/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1d__No6Ni10NB6DP9BRDZhp4pA40zIHtwoE5MejYcQqA/edit\", \"original_cell\": \"\", \"completed\": \"Yes\"}, {\"row_number\": 3, \"day\": \"2\", \"topic\": \"T01 Numbers and Place Value\", \"group_a\": \"Body counting\", \"group_b\": \"Three-digit number dictation\", \"group_c\": \"Number name writing\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/17fJjz3zEFVGi054aXEZMScpxrKEVtFMG4i6H9vC25aY/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/17fJjz3zEFVGi054aXEZMScpxrKEVtFMG4i6H9vC25aY/edit\", \"original_cell\": \"\", \"completed\": \"Partly\"}, {\"row_number\": 4, \"day\": \"3\", \"topic\": \"T01 Numbers and Place Value\", \"group_a\": \"Counting walk\", \"group_b\": \"Expanded form practice\", \"group_c\": \"Ordering large numbers\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1FEwVDC4JuZ9Ib3lTZAUJs-sBQA9ftCTGAW8KN0aOkzE/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1FEwVDC4JuZ9Ib3lTZAUJs-sBQA9ftCTGAW8KN0aOkzE/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 5, \"day\": \"4\", \"topic\": \"T02 Operations\", \"group_a\": \"Stone addition pairs\", \"group_b\": \"Three-digit addition with carrying\", \"group_c\": \"Equivalent fraction wall\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1XnvF4XjYmYR1SIxYkVXaAnPzm0MQ2lTYqWBYuVH3ddI/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1XnvF4XjYmYR1SIxYkVXaAnPzm0MQ2lTYqWBYuVH3ddI/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 6, \"day\": \"5\", \"topic\": \"T02 Operations\", \"group_a\": \"Take-away game\", \"group_b\": \"Three-digit subtraction with borrowing\", \"group_c\": \"Adding fractions with same denominator\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1Osnr4lb_gSZhkAbA9jUOAW9y_EY3_o6LgHqgqrOo-U0/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1Osnr4lb_gSZhkAbA9jUOAW9y_EY3_o6LgHqgqrOo-U0/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 7, \"day\": \"6\", \"topic\": \"T02 Operations\", \"group_a\": \"Finger addition race\", \"group_b\": \"Estimation before solving\", \"group_c\": \"Fraction comparison game\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1MlqPLivwc_GfZSp29SpWiKyT4IH_rk-34sZZv_S-hcU/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1MlqPLivwc_GfZSp29SpWiKyT4IH_rk-34sZZv_S-hcU/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 8, \"day\": \"7\", \"topic\": \"T03 Shapes and Space\", \"group_a\": \"Shape hunt\", \"group_b\": \"Symmetry fold\", \"group_c\": \"Pattern builder\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1ky-q4XTxNn3P1ztlNTx4HQflDTxwykOj8gt4fSC6FLg/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1ky-q4XTxNn3P1ztlNTx4HQflDTxwykOj8gt4fSC6FLg/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 9, \"day\": \"8\", \"topic\": \"T03 Shapes and Space\", \"group_a\": \"Shape stamping\", \"group_b\": \"Shape description game\", \"group_c\": \"Symmetry in letters\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1IHRuw1V9fJPQKs-_y4ye6Pu17rjfZHGDdl0TOpCe3xQ/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1IHRuw1V9fJPQKs-_y4ye6Pu17rjfZHGDdl0TOpCe3xQ/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 10, \"day\": \"9\", \"topic\": \"T03 Shapes and Space\", \"group_a\": \"Body shapes\", \"group_b\": \"Mirror shapes\", \"group_c\": \"Tile the floor\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1uLmKhYKFEGCnxcbEPQQogydm1HcoQRfD6w-Bxtq43sc/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1uLmKhYKFEGCnxcbEPQQogydm1HcoQRfD6w-Bxtq43sc/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 11, \"day\": \"10\", \"topic\": \"T03 Shapes and Space\", \"group_a\": \"Shape sorting race\", \"group_b\": \"Angle arms\", \"group_c\": \"Paper angle measurer\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1DdAACaqnbgbZY7l3v1bnJ1a9905oRl49oiFWVjHsM4k/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1DdAACaqnbgbZY7l3v1bnJ1a9905oRl49oiFWVjHsM4k/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 12, \"day\": \"11\", \"topic\": \"T04 Measurement\", \"group_a\": \"Long and short lineup\", \"group_b\": \"Estimate then measure\", \"group_c\": \"24-hour clock\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1AJy40Hnkh8mldHBqJJwUnO7eCdkdlRllNTA32VUHaEc/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1AJy40Hnkh8mldHBqJJwUnO7eCdkdlRllNTA32VUHaEc/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 13, \"day\": \"12\", \"topic\": \"T04 Measurement\", \"group_a\": \"Heavy or light\", \"group_b\": \"Kilogram and gram\", \"group_c\": \"Train timetable\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1dAmzjFqYre-mn1MiNOzOy7kx_HWQt64djLzRYw-wYJo/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1dAmzjFqYre-mn1MiNOzOy7kx_HWQt64djLzRYw-wYJo/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 14, \"day\": \"13\", \"topic\": \"T04 Measurement\", \"group_a\": \"Handspan measuring\", \"group_b\": \"Litre converter\", \"group_c\": \"Duration word problems\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1xK7GdBgjDxPsC8TLYDl-4SSr8s4zFU80gzvkrkO7cY4/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1xK7GdBgjDxPsC8TLYDl-4SSr8s4zFU80gzvkrkO7cY4/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 15, \"day\": \"14\", \"topic\": \"T05 Data Handling and Patterns\", \"group_a\": \"Clap pattern\", \"group_b\": \"Class birthday table\", \"group_c\": \"Find the average\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1k4YyYRr2qfoZHcLnkZGfWpCkJFly2Wo_9okSoXx2H40/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1k4YyYRr2qfoZHcLnkZGfWpCkJFly2Wo_9okSoXx2H40/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 16, \"day\": \"15\", \"topic\": \"T05 Data Handling and Patterns\", \"group_a\": \"Number chain\", \"group_b\": \"Draw a pictograph\", \"group_c\": \"Bar graph with average line\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1DlBpmCRHB2QAG0-Vp6HqgrJXKa2cWNi3ROzYwAMqVtM/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1DlBpmCRHB2QAG0-Vp6HqgrJXKa2cWNi3ROzYwAMqVtM/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 17, \"day\": \"16\", \"topic\": \"T05 Data Handling and Patterns\", \"group_a\": \"Shape pattern strip\", \"group_b\": \"Question from a table\", \"group_c\": \"Temperature table\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1j6ZEOl5K9VlNSwNdSHMGu2aZZP2FTPdaFaSFL1EyJl0/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1j6ZEOl5K9VlNSwNdSHMGu2aZZP2FTPdaFaSFL1EyJl0/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 18, \"day\": \"17\", \"topic\": \"T06 Numbers and Place Value\", \"group_a\": \"Tens and ones with sticks\", \"group_b\": \"Skip counting clap\", \"group_c\": \"Indian place value system\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1_sDH0hMc2fVgOvNFHgoQHBGov49LwDcdZyskEDoAjqY/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1_sDH0hMc2fVgOvNFHgoQHBGov49LwDcdZyskEDoAjqY/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 19, \"day\": \"18\", \"topic\": \"T06 Numbers and Place Value\", \"group_a\": \"Number dictation on slates\", \"group_b\": \"Backward counting relay\", \"group_c\": \"Compare large numbers\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/17_Ut1lLMRAWOP2Ie9qc4GFC0-KhylwCuKytnoHf41OQ/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/17_Ut1lLMRAWOP2Ie9qc4GFC0-KhylwCuKytnoHf41OQ/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 20, \"day\": \"19\", \"topic\": \"T06 Numbers and Place Value\", \"group_a\": \"Place value chart on the board\", \"group_b\": \"Number pattern fill-in\", \"group_c\": \"Real-life large numbers\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1RY8lvY-WWGD3rmSXTrNVubyJxzRTJOo2TuwNECwdzoQ/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1RY8lvY-WWGD3rmSXTrNVubyJxzRTJOo2TuwNECwdzoQ/edit\", \"original_cell\": \"\", \"completed\": \"\"}, {\"row_number\": 21, \"day\": \"20\", \"topic\": \"T07 Operations\", \"group_a\": \"Market story problems\", \"group_b\": \"Multiplication on the board step by step\", \"group_c\": \"Money as decimals\", \"plan_cell\": \"=HYPERLINK(\\\"https://docs.google.com/document/d/1i5OdgTsoNtMqPPXPox0BodLyItxBTTvih2xH1_61kZU/edit\\\",\\\"Open\\\")\", \"plan_url\": \"https://docs.google.com/document/d/1i5OdgTsoNtMqPPXPox0BodLyItxBTTvih2xH1_61kZU/edit\", \"original_cell\": \"\", \"completed\": \"\"}], \"updated_folder_id\": \"1Ts45Zqv2xRFIO6znrVEjwzLq_QzCdTiP\", \"row_number\": 3, \"feedback\": {\"day_number\": \"2\", \"topic\": \"T01 Numbers and Place Value\", \"class_happened\": true, \"completed\": \"Partly\", \"group_a_result\": \"Yes\", \"group_b_result\": \"Partly\", \"group_c_result\": \"Yes\", \"what_went_well\": \"Group A: body counting went really well. Group C finished early.\", \"what_went_wrong\": \"Group B: wrote 408 as 48; zero in the middle confused them.\", \"how_to_improve\": \"Group C: something harder. Group B: more bundles practice.\", \"what_is_left\": \"Group B: last two dictation rounds.\", \"other_notes\": null, \"next_step\": \"replan_topic\", \"pending\": [{\"group\": \"B\", \"what\": \"last two dictation rounds\"}], \"call_date\": \"2026-10-24\", \"conversation_id\": \"conv_TEST_sample_day2\", \"source\": {\"day_number\": \"elevenlabs\", \"topic\": \"elevenlabs\", \"class_happened\": \"elevenlabs\", \"completed\": \"elevenlabs\", \"group_a_result\": \"elevenlabs\", \"group_b_result\": \"elevenlabs\", \"group_c_result\": \"elevenlabs\", \"what_went_well\": \"elevenlabs\", \"what_went_wrong\": \"elevenlabs\", \"how_to_improve\": \"elevenlabs\", \"what_is_left\": \"elevenlabs\"}, \"sheet\": {\"Completed\": \"Partly\", \"What went well\": \"Group A: body counting went really well. Group C finished early.\", \"What went wrong\": \"Group B: wrote 408 as 48; zero in the middle confused them.\", \"How to improve\": \"Group C: something harder. Group B: more bundles practice.\", \"What is left\": \"Group B: last two dictation rounds.\", \"Reported on\": \"2026-10-24\"}}, \"make_easier\": false} }];"
+      }
+    },
+    {
+      "id": "bc9922be-dac2-5a5b-8be9-5ae7830eb1a8",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        300
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "k1",
+              "name": "admin_email",
+              "type": "string",
+              "value": "rishabhrawat35@gmail.com"
+            },
+            {
+              "id": "k2",
+              "name": "curriculum_sheet_id",
+              "type": "string",
+              "value": "12ajFfzo4AkJEYsZ8bezfk2ShnLJAC684SUfCDUunoww"
+            },
+            {
+              "id": "k3",
+              "name": "challenger_agent_id",
+              "type": "string",
+              "value": "0b35a2a4-ee52-4829-baa7-d4aedbc2ab5f"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      }
+    },
+    {
+      "id": "c1f6ef89-c4ca-5c71-bfd2-2b2bea0dd9d9",
+      "name": "Pick days",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Which days may change, which give context, and which Docs to read. No AI.\nconst j = $input.first().json;\nconst rows = j.rows; // [{row_number, day, topic, group_a.., plan_url, plan_cell, original_cell, completed}]\nconst i = rows.findIndex(r => r.row_number === j.row_number);\nconst today = rows[i];\nconst blockFrom = s => { const out = []; for (let k = s; k < rows.length && rows[k].topic === rows[s].topic; k++) out.push(rows[k]); return out; };\nlet s = i; while (s > 0 && rows[s - 1].topic === today.topic) s--;\nconst topicRows = blockFrom(s);\nconst pos = topicRows.indexOf(today);\nconst nextStart = s + topicRows.length;\nconst nextTopic = nextStart < rows.length ? blockFrom(nextStart) : [];\nconst task = j.make_easier ? 'easier_day' : 'replan_topic';\nlet scope, next, lastDay = false;\nif (task === 'easier_day') { scope = [today]; next = rows.slice(i + 1, i + 3); }\nelse if (pos < topicRows.length - 1) { scope = topicRows.slice(pos + 1); next = nextTopic.slice(0, 2); }\nelse { lastDay = true; scope = nextTopic.slice(0, 2); next = rows.slice(nextStart + 2, nextStart + 4); }\nconst history = topicRows.slice(0, pos + 1);\nconst docId = u => (String(u || '').match(/\\/d\\/([\\w-]{20,})/) || [])[1] || null;\nconst short = r => ({ day: r.day, topic: r.topic, row_number: r.row_number });\nconst docs = [];\nfor (const r of [...new Set([...history, ...scope, ...next])]) {\n  if (docId(r.plan_url)) docs.push({ day: r.day, which: 'plan', doc_id: docId(r.plan_url) });\n  if (docId(r.original_cell)) docs.push({ day: r.day, which: 'original', doc_id: docId(r.original_cell) });\n}\nreturn [{ json: { ...j, task, last_day_of_topic: lastDay, today: short(today), history: history.map(short), scope: scope.map(short), next: next.map(short), docs } }];\n"
+      }
+    },
+    {
+      "id": "fcb0af06-bb1c-5b1f-8de6-c63318d86628",
+      "name": "One item per Doc",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        800,
+        300
+      ],
+      "parameters": {
+        "fieldToSplitOut": "docs",
+        "options": {}
+      }
+    },
+    {
+      "id": "95a6e110-ba18-56c3-be72-07f155295572",
+      "name": "Drive: read day Docs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        300
+      ],
+      "parameters": {
+        "url": "={{ 'https://www.googleapis.com/drive/v3/files/' + $json.doc_id + '/export?mimeType=text/plain' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "id": "a2e66e61-c644-54c6-8aa1-e2b6fd2221b2",
+      "name": "Sheets: Activities",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        300
+      ],
+      "parameters": {
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Config').first().json.curriculum_sheet_id + '/values/Activities!A1:I400' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {}
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "executeOnce": true
+    },
+    {
+      "id": "06b7fc00-e321-5767-9984-fc39eaf96d21",
+      "name": "Sheets: Levels",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1400,
+        300
+      ],
+      "parameters": {
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Config').first().json.curriculum_sheet_id + '/values/Levels!A1:J100' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {}
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "executeOnce": true
+    },
+    {
+      "id": "7215a9de-b491-5358-8181-35dd6ef35da1",
+      "name": "Gather context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Step 0: everything the models need, from the Docs and the Curriculum data sheet. No AI.\nconst p = $('Pick days').first().json;\nconst read = $('Drive: read day Docs').all();\nconst docs = $('One item per Doc').all().map((it, k) => ({ ...it.json, text: String(read[k]?.json?.data || '') }));\nconst table = v => { const [h, ...r] = v.values || []; return r.map(x => Object.fromEntries(h.map((k, n) => [k, x[n] ?? '']))); };\nconst acts = Object.fromEntries(table($('Sheets: Activities').first().json).map(a => [a.activity_id, a]));\nconst levels = Object.fromEntries(table($('Sheets: Levels').first().json).map(l => [l.level_id, l]));\nconst G = ['A', 'B', 'C'];\n// \"Skill (NUM-04): ...\" / \"Activity (NUM-04-A2): ...\" lines, in the order Group A, B, C.\nconst parse = t => {\n  const ac = [...t.matchAll(/Activity \\(([A-Z]{3}-\\d{2}-A\\d+)\\)/g)].map(m => m[1]);\n  if (ac.length < 3) return null;\n  const line = re => ((t.match(re) || [])[1] || '').trim();\n  const checks = [...t.matchAll(/^Check:\\s*(.+)$/gm)].map(m => m[1].trim());\n  return { groups: Object.fromEntries(G.map((g, n) => [g, { level_id: ac[n].slice(0, 6), activity_id: ac[n] }])),\n    opening: line(/Whole class opening \\(5 min\\)\\s*\\r?\\n(.+)/), rotation: line(/Rotation\\s*\\r?\\n(.+)/),\n    checks: Object.fromEntries(G.map((g, n) => [g, checks[n] || ''])) };\n};\nconst dayInfo = {};\nfor (const r of [...p.history, ...p.scope, ...p.next]) {\n  const t = w => (docs.find(d => d.day === r.day && d.which === w) || {}).text || '';\n  dayInfo[r.day] = { ...r, ...(parse(t('plan')) || parse(t('original')) || { groups: null }) };\n}\nconst title = id => (acts[id] || {}).title || '?';\nconst withTitles = d => d && d.groups ? { day: d.day, topic: d.topic, ...Object.fromEntries(G.map(g => ['group_' + g.toLowerCase(),\n  { ...d.groups[g], activity_title: title(d.groups[g].activity_id) }])) } : { day: d.day, topic: d.topic, unreadable: true };\nconst fb = p.feedback;\nconst result = { A: fb.group_a_result, B: fb.group_b_result, C: fb.group_c_result };\nconst notDone = g => /^(partly|no)$/i.test(String(result[g] || ''));\nconst today = dayInfo[p.today.day];\nconst history = Object.fromEntries(G.map(g => [g, p.history.map(h => dayInfo[h.day].groups?.[g]?.activity_id).filter(Boolean)]));\n// Candidates: same strand, each group's level (today and on the day) +/- 1. Group A oral/hands-on only.\nconst byStrandNo = (strand, no) => Object.values(levels).find(l => l.strand_id === strand && Number(l.level_no) === no);\nconst near = id => { const l = levels[id]; if (!l) return []; const n = Number(l.level_no);\n  return [n - 1, n, n + 1].map(x => byStrandNo(l.strand_id, x)).filter(Boolean).map(x => x.level_id); };\nconst candidates = {};\nfor (const g of G) {\n  const lv = new Set();\n  for (const d of p.scope) {\n    const base = dayInfo[d.day].groups?.[g]?.level_id;\n    if (base) near(base).forEach(x => lv.add(x));\n    const t = today.groups?.[g]?.level_id;\n    if (t && base && t.slice(0, 3) === base.slice(0, 3)) near(t).forEach(x => lv.add(x));\n  }\n  candidates[g] = Object.values(acts).filter(a => lv.has(a.level_id))\n    .filter(a => g !== 'A' || /^(oral|hands-on)$/i.test(a.mode))\n    .filter(a => !(notDone(g) && a.activity_id === today.groups?.[g]?.activity_id))\n    .map(a => { const k = history[g].indexOf(a.activity_id);\n      return a.activity_id + ' | ' + a.level_id + ' | ' + a.title + ' | ' + a.mode + ' | ' + a.minutes + ' min' + (k < 0 ? '' : ' | done on Day ' + p.history[k].day); });\n}\nconst usedLevels = [...new Set([...Object.values(candidates).flat().map(c => c.split(' | ')[1]),\n  ...Object.values(dayInfo).flatMap(d => d.groups ? G.map(g => d.groups[g].level_id) : [])])].sort();\nconst pending = (fb.pending || []).map(x => (x.group ? 'Group ' + x.group + ': ' : '') + x.what);\nreturn [{ json: {\n  task: p.task, last_day_of_topic: p.last_day_of_topic, today: p.today, scope: p.scope, next: p.next,\n  feedback: { day: fb.day_number, topic: fb.topic, completed: fb.completed, group_a: result.A, group_b: result.B, group_c: result.C,\n    what_went_well: fb.what_went_well, what_went_wrong: fb.what_went_wrong, how_to_improve: fb.how_to_improve,\n    what_is_left: fb.what_is_left, other_notes: fb.other_notes, pending },\n  result, history, candidates,\n  levels: Object.fromEntries(usedLevels.filter(id => levels[id]).map(id => [id, levels[id].can_statement])),\n  reported_day: withTitles(today), scope_days: p.scope.map(d => withTitles(dayInfo[d.day])), next_days: p.next.map(d => withTitles(dayInfo[d.day])),\n  day_info: dayInfo, acts, level_meta: Object.fromEntries(Object.values(levels).map(l => [l.level_id, { strand: l.strand_id, no: Number(l.level_no) }])),\n  docs_read: docs.length, docs_unreadable: Object.values(dayInfo).filter(d => !d.groups).map(d => d.day),\n} }];\n"
+      }
+    },
+    {
+      "id": "0e15c6b7-bbd9-5fbb-8cec-1b0240712184",
+      "name": "Diagnose prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1800,
+        300
+      ],
+      "parameters": {
+        "jsCode": "const c = $json;\nconst prompt = [\n  'Teacher feedback:', JSON.stringify(c.feedback, null, 1),\n  '', 'What each group did on the reported day (Day ' + c.today.day + '):', JSON.stringify(c.reported_day, null, 1),\n  '', 'Skills:', JSON.stringify(c.levels, null, 1),\n  '', 'For each group A, B, C give: status (on_track, needs_repeat or ahead), pending (the unfinished work in one short line, or null), root_cause (why it went wrong in one short line, or null).',\n  'Reply with JSON only: {\"groups\":[{\"group\":\"A\",\"status\":\"on_track\",\"pending\":null,\"root_cause\":null},{\"group\":\"B\",...},{\"group\":\"C\",...}]}',\n].join('\\n');\nreturn [{ json: { prompt } }];\n"
+      }
+    },
+    {
+      "id": "99f17b8f-d839-5cac-9353-3cfe4dfa56ec",
+      "name": "Diagnose",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        2000,
+        300
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "hasOutputParser": false,
+        "messages": {
+          "messageValues": [
+            {
+              "type": "SystemMessagePromptTemplate",
+              "message": "You look at a maths teacher's feedback about one day and say how each of her three groups is doing. Be brief. Reply with JSON only."
+            }
+          ]
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "1ae5076f-0869-58d7-9e7b-a2b476f1a8df",
+      "name": "Model: Diagnose (small, gpt-5.4-mini)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2000,
+        520
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5.4-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5.4-mini"
+        },
+        "options": {
+          "responseFormat": "json_object"
+        }
+      },
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "id": "1964cc92-a2a5-52fb-aa39-12644ffc8271",
+      "name": "Read diagnosis",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2250,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Parse the diagnosis. If the model reply is unusable, derive it from the Yes/Partly/No answers.\nconst c = $('Gather context').first().json;\nconst parseOut = v => { if (v && typeof v === 'object' && !('text' in v)) return v; let t = String((v && v.text) || '').replace(/<think>[\\s\\S]*?<\\/think>/g, ''); return JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1)); };\nlet groups = null;\ntry { groups = parseOut($json).groups; } catch (e) {}\nconst ok = Array.isArray(groups) && ['A', 'B', 'C'].every(g => groups.some(x => x.group === g));\nif (!ok) groups = ['A', 'B', 'C'].map(g => ({ group: g, status: /^(partly|no)$/i.test(c.result[g] || '') ? 'needs_repeat' : 'on_track',\n  pending: (c.feedback.pending.find(x => x.startsWith('Group ' + g)) || null), root_cause: null }));\nreturn [{ json: { diagnosis: groups.map(x => ({ group: x.group, status: x.status, pending: x.pending || null, root_cause: x.root_cause || null })), diagnosis_from_model: ok } }];\n"
+      }
+    },
+    {
+      "id": "97a9f684-fe4f-5a0f-9a60-f01c01d60cb8",
+      "name": "Plan prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2450,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Builds the Plan prompt. Comes here first from Diagnose, again after a failed rule check or a REVISE from the challenger.\nconst c = $('Gather context').first().json;\nconst diagnosis = $('Read diagnosis').first().json.diagnosis;\nconst st = $json.state || { plan_calls: 0, fails: 0, challenge_round: 0 };\nconst allowed = c.scope.map(d => d.day);\nconst task = c.task === 'easier_day'\n  ? 'The teacher said No twice for Day ' + c.today.day + '. Make an easier version of that day: same level for each group, a different, simpler activity (more hands-on, smaller numbers).'\n  : 'Replan the days below after the teacher feedback.' + (c.last_day_of_topic ? ' The reported day was the last day of its topic, so the next topic\\'s first days may change.' : '');\nconst lines = [\n  task, '',\n  'Feedback:', JSON.stringify(c.feedback, null, 1), '',\n  'Diagnosis per group:', JSON.stringify(diagnosis, null, 1), '',\n  'Reported day:', JSON.stringify(c.reported_day), '',\n  'Days you may change (current plan): ' + allowed.join(', '), JSON.stringify(c.scope_days, null, 1), '',\n  'Days after them (context only, do not change):', JSON.stringify(c.next_days), '',\n  'Skills (level_id: what the child can do):', JSON.stringify(c.levels, null, 1), '',\n  'Activities you may use, per group (activity_id | level_id | title | mode | minutes):',\n  ...['A', 'B', 'C'].map(g => 'Group ' + g + ':\\n' + c.candidates[g].join('\\n')), '',\n  'Rules:',\n  '- Change only days ' + allowed.join(', ') + '. You may add ONE extra day \"<N>a\" (for example \"' + allowed[allowed.length - 1] + 'a\") only if the pending work cannot fit.',\n  '- Each day: one level_id and one activity_id per group, taken from the lists above. The activity must belong to that level.',\n  '- The three groups are on three different levels each day.',\n  '- Pending work goes first: put it in finish_first for that group on the first changed day: one or two full sentences saying what is left from the reported day and the specific numbers or items involved (no IDs). Otherwise finish_first is null.',\n  '- A group that said Partly or No stays on the same level with a different activity. A Yes group moves on as planned. A group that is clearly ahead may move up one level.',\n  '- Follow the teacher\\'s \"how to improve\" when it fits these rules.',\n  '- reason: one short line per day saying what changed and why.',\n  '',\n  'Reply with JSON only, in this shape:',\n  '{\"days\":[{\"day\":\"' + allowed[0] + '\",\"plan_status\":\"Updated\",\"insert_after\":null,\"reason\":\"...\",\"group_a\":{\"level_id\":\"...\",\"activity_id\":\"...\",\"finish_first\":null},\"group_b\":{\"level_id\":\"...\",\"activity_id\":\"...\",\"finish_first\":\"...\"},\"group_c\":{\"level_id\":\"...\",\"activity_id\":\"...\",\"finish_first\":null}}],\"pending_placement\":\"one line\"}',\n  'For an added day use \"plan_status\":\"Added\" and \"insert_after\":\"<N>\".',\n];\nif ($json.errors && $json.errors.length) lines.push('', 'Your last plan broke these rules. Fix every one:', ...$json.errors.map(e => '- ' + e), 'Your last plan:', JSON.stringify($json.plan));\nif ($json.revise) lines.push('', 'A reviewer found these problems in your last plan. Fix them:', ...$json.problems.map(x => '- Day ' + x.day + ', Group ' + x.group + ': ' + x.problem + (x.fix_hint ? ' (' + x.fix_hint + ')' : '')), 'Your last plan:', JSON.stringify($json.plan));\nreturn [{ json: { prompt: lines.join('\\n'), state: { ...st, plan_calls: st.plan_calls + 1 } } }];\n"
+      }
+    },
+    {
+      "id": "a38982c9-aa9a-569c-893e-e87734abd082",
+      "name": "Plan",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        2650,
+        300
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "hasOutputParser": false,
+        "messages": {
+          "messageValues": [
+            {
+              "type": "SystemMessagePromptTemplate",
+              "message": "You plan maths lessons for a multi-grade village classroom (grades 1-5, groups A, B, C). You choose only level and activity IDs from the lists you are given. Never invent an ID. Reply with JSON only."
+            }
+          ]
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "cdd61106-7fa0-56b5-947e-5336326b5bce",
+      "name": "Model: Plan (strong, gpt-5.5)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2650,
+        520
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5.5",
+          "mode": "list",
+          "cachedResultName": "gpt-5.5"
+        },
+        "options": {
+          "responseFormat": "json_object"
+        }
+      },
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "id": "251c27c5-8fde-526d-8732-dc89c0acd1f4",
+      "name": "Rule check",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2900,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Step 3: hard rules, checked in code.\nconst c = $('Gather context').first().json;\nconst st = $('Plan prompt').last().json.state;\nconst G = ['A', 'B', 'C'];\nconst errors = [];\nlet plan = null;\nconst parseOut = v => { if (v && typeof v === 'object' && !('text' in v)) return v; let t = String((v && v.text) || '').replace(/<think>[\\s\\S]*?<\\/think>/g, ''); return JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1)); };\ntry { plan = parseOut($json); }\ncatch (e) { errors.push('The reply was not valid JSON. Reply with the JSON object only.'); }\nconst days = Array.isArray(plan?.days) ? plan.days : [];\nif (plan && !days.length) errors.push('\"days\" is empty.');\nconst allowed = new Set(c.scope.map(d => String(d.day)));\nconst anchors = new Set([...allowed, String(c.today.day)]);\nlet added = 0;\nconst strandOf = day => { const d = c.day_info[day]; return d && d.groups ? d.groups.A.level_id.slice(0, 3) : null; };\nfor (const d of days) {\n  const day = String(d.day);\n  let base = day;\n  if (!allowed.has(day)) {\n    const m = day.match(/^(\\d+)a$/i);\n    if (m && anchors.has(m[1]) && String(d.insert_after) === m[1] && !added++) base = m[1];\n    else { errors.push('Day ' + day + ': you may not change this day. Allowed: ' + [...allowed].join(', ') + ', plus one added day \"<N>a\" with insert_after \"<N>\".'); continue; }\n  }\n  const strand = strandOf(base) || strandOf(String(c.today.day));\n  const lv = [];\n  for (const g of G) {\n    const x = d['group_' + g.toLowerCase()] || {};\n    const a = c.acts[x.activity_id];\n    if (!c.level_meta[x.level_id]) errors.push('Day ' + day + ', Group ' + g + ': level_id \"' + x.level_id + '\" does not exist.');\n    if (!a) { errors.push('Day ' + day + ', Group ' + g + ': activity_id \"' + x.activity_id + '\" does not exist.'); continue; }\n    if (a.level_id !== x.level_id) errors.push('Day ' + day + ', Group ' + g + ': ' + x.activity_id + ' is for level ' + a.level_id + ', not ' + x.level_id + '.');\n    if (strand && String(x.level_id).slice(0, 3) !== strand) errors.push('Day ' + day + ', Group ' + g + ': level must be in strand ' + strand + '.');\n    if (g === 'A' && !/^(oral|hands-on)$/i.test(a.mode)) errors.push('Day ' + day + ', Group A: ' + x.activity_id + ' is ' + a.mode + '. Group A needs oral or hands-on work.');\n    if (/^(partly|no)$/i.test(c.result[g] || '') && x.activity_id === c.reported_day['group_' + g.toLowerCase()]?.activity_id) errors.push('Day ' + day + ', Group ' + g + ': ' + x.activity_id + ' is the activity that did not work on Day ' + c.today.day + '. Use a different activity at the same level.');\n    if (c.task === 'easier_day' && x.level_id !== c.reported_day['group_' + g.toLowerCase()]?.level_id) errors.push('Day ' + day + ', Group ' + g + ': the easier day keeps the same level (' + c.reported_day['group_' + g.toLowerCase()]?.level_id + ').');\n    lv.push(x.level_id);\n  }\n  if (new Set(lv).size < lv.length) errors.push('Day ' + day + ': the three groups must be on three different levels.');\n}\nfor (const pend of c.feedback.pending) {\n  const g = (pend.match(/^Group ([ABC])/) || [])[1];\n  const placed = days.some(d => g ? (d['group_' + g.toLowerCase()] || {}).finish_first : G.some(x => (d['group_' + x.toLowerCase()] || {}).finish_first));\n  if (!placed) errors.push('Pending work \"' + pend + '\" is not placed. Put it in finish_first on the first changed day.');\n}\nconst ok = errors.length === 0;\nconst state = { ...st, fails: st.fails + (ok ? 0 : 1) };\n// Inputs for the AgenticOrg challenger, in the shape its prompt expects.\nconst summary = a => { const s = String(a.steps_english || ''); return s.length > 160 ? s.slice(0, 157) + '...' : s; };\nconst draft = days.map(d => ({ day: String(d.day), topic: (c.scope.find(s => String(s.day) === String(d.day)) || c.scope[0]).topic,\n  plan_status: d.plan_status === 'Added' ? 'Added' : 'Updated', reason: d.reason || '',\n  ...Object.fromEntries(G.map(g => { const x = d['group_' + g.toLowerCase()] || {}; const a = c.acts[x.activity_id] || {};\n    return ['group_' + g.toLowerCase(), { level_id: x.level_id, activity_id: x.activity_id, activity_title: a.title || '', activity_summary: summary(a), finish_first: x.finish_first || null }]; })) }));\nconst challenge_inputs = { feedback: c.feedback, diagnosis: $('Read diagnosis').first().json.diagnosis, reported_day: c.reported_day, draft, next_days: c.next_days };\nreturn [{ json: { ok, errors, plan, state, challenge_inputs } }];\n"
+      }
+    },
+    {
+      "id": "da0353fc-6792-52a8-9a16-1d35063612ad",
+      "name": "Rules OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3100,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.ok }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "957f029e-6b66-5dba-ba4a-1046366766e9",
+      "name": "Ask challenger?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3300,
+        180
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ !!$('Config').first().json.challenger_agent_id && $json.state.challenge_round === 0 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "6b362e18-6c5a-524e-b40e-9e2061b1a915",
+      "name": "AgenticOrg: challenge",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3500,
+        80
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://agenticorg.hackathon.pinelabs.com/api/v1/agents/' + $('Config').first().json.challenger_agent_id + '/run' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ action: 'process', inputs: $json.challenge_inputs, context: { workflow: 'Feedback 2 v2', day: $('Pick days').first().json.today.day } }) }}",
+        "options": {
+          "timeout": 120000,
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "AgenticOrg API key"
+        }
+      }
+    },
+    {
+      "id": "8735ab68-f107-54ad-b10c-74d199357c64",
+      "name": "Read challenge",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3700,
+        80
+      ],
+      "parameters": {
+        "jsCode": "// Step 4 result. AgenticOrg may wrap the JSON or put text around it, so look for \"verdict\" anywhere.\nconst prev = $('Rule check').last().json;\nconst find = v => {\n  if (typeof v === 'string') { const i = v.indexOf('{'), k = v.lastIndexOf('}'); if (i < 0 || !v.includes('verdict')) return null; try { return find(JSON.parse(v.slice(i, k + 1))); } catch (e) { return null; } }\n  if (v && typeof v === 'object') { if (v.verdict) return v; for (const x of Object.values(v)) { const f = find(x); if (f) return f; } }\n  return null;\n};\nconst v = find($json);\nconst problems = v && Array.isArray(v.problems) ? v.problems.slice(0, 6) : [];\nconst revise = !!v && /^revise$/i.test(String(v.verdict)) && problems.length > 0;\nreturn [{ json: { ...prev, revise, problems, challenge_verdict: v ? String(v.verdict) : 'no answer (' + ($json.error?.message || $json.detail || $json.status || 'unknown') + ')',\n  state: { ...prev.state, challenge_round: prev.state.challenge_round + 1 } } }];\n"
+      }
+    },
+    {
+      "id": "de4b4430-1885-5170-859f-56924d6f1a1b",
+      "name": "Revise?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3900,
+        80
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.revise }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "d0dda347-286f-547d-9ce9-05df5d5a7d3c",
+      "name": "Retry?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3300,
+        460
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.state.fails <= 2 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "51271c56-1b8d-5a12-9638-bf03241b2e7e",
+      "name": "Old plan kept: email Rira",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3500,
+        560
+      ],
+      "parameters": {
+        "jsCode": "// Plan still breaks the rules after 2 retries: keep the old plan, tell Rira.\nconst ctx = $('Pick days').first().json;\nconst to = $('Config').first().json.admin_email;\nconst subject = 'Replanner v2 kept the old plan (Day ' + ctx.today.day + ', ' + ctx.today.topic + ')';\nconst body = ['The replanner could not make a plan that passes the rules after 3 tries, so the sheet and Docs were not changed.', '',\n  'Teacher sheet: ' + ctx.sheet_url, 'Feedback: ' + JSON.stringify(ctx.feedback.sheet || {}), '', 'Last rule errors:', ...($json.errors || []).map(e => '- ' + e), '',\n  'Last plan from the model:', JSON.stringify($json.plan)].join('\\n');\nconst raw = ['To: ' + to, 'Subject: =?UTF-8?B?' + Buffer.from(subject).toString('base64') + '?=', 'Content-Type: text/plain; charset=UTF-8', '', body].join('\\r\\n');\nreturn [{ json: { subject, raw: Buffer.from(raw).toString('base64').replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '') } }];\n"
+      }
+    },
+    {
+      "id": "1e19aa45-d830-5e53-91b9-af70c6098834",
+      "name": "Gmail: tell Rira",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3700,
+        560
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ raw: $json.raw }) }}",
+        "options": {}
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "id": "47402141-af62-5558-b46a-df525406f389",
+      "name": "Write prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4150,
+        240
+      ],
+      "parameters": {
+        "jsCode": "// Step 5 input: the checked plan, with titles and skills. The model writes only the short texts.\nconst c = $('Gather context').first().json;\nconst plan = $json.plan;\nconst G = ['A', 'B', 'C'];\nconst days = plan.days.map(d => ({ day: String(d.day), reason: d.reason,\n  groups: Object.fromEntries(G.map(g => { const x = d['group_' + g.toLowerCase()]; const a = c.acts[x.activity_id];\n    return [g, { skill: c.levels[x.level_id] || '', activity: a.title, materials: a.materials, finish_first: x.finish_first || null, said_today: c.result[g] || null }]; })) }));\nconst prompt = [\n  'A maths teacher teaches grades 1-5 in one room in three groups. Write the short texts for her updated day plans.',\n  '', 'What she said about Day ' + c.today.day + ':', JSON.stringify(c.feedback, null, 1),\n  '', 'New plans:', JSON.stringify(days, null, 1),\n  '', 'For each day write:',\n  '- opening: a 5-minute whole-class warm-up on the day\\'s topic, one or two sentences.',\n  '- rotation: one sentence. The teacher works with one group for 15 minutes while the other two practise, then moves on. Start with the group that needs most help.',\n  '- for each group: finish_first (only if finish_first is given, else null): ONE string of about 40 to 70 words, with inline labels and inline numbering, built from that group\\'s what_went_wrong, how_to_improve and what_is_left. Example: \"Left from Day 2: the last 2 dictation rounds. Why: children wrote 408 as 48 when zero sat in the tens place. Do: (1) Say 408, 305, 710; children write them on slates. (2) Ask where the zero goes and why. (3) Show 4 bundles, 0 loose tens, 8 sticks. Time: 10 min. Check: write 506.\" No line breaks and no lists inside it, check (one concrete check question the teacher can ask; not \"Did you understand?\"), sheet (a very short line for her plan sheet, max 8 words).',\n  'Also write feedback_summary (one plain sentence of what she told us) and changes (one short line per day, like \"Day 3: Group B finishes dictation, then works with bundles.\").',\n  'Simple English. Short sentences. Do not use words that label children, such as weak, slow, struggling, behind, poor, bright or smart. Do not write activity IDs.',\n  '', 'Reply with JSON only:',\n  '{\"feedback_summary\":\"...\",\"changes\":[\"...\"],\"days\":[{\"day\":\"' + days[0].day + '\",\"opening\":\"...\",\"rotation\":\"...\",\"groups\":{\"A\":{\"finish_first\":null,\"check\":\"...\",\"sheet\":\"...\"},\"B\":{...},\"C\":{...}}}]}',\n].join('\\n');\nreturn [{ json: { prompt, plan } }];\n"
+      }
+    },
+    {
+      "id": "f03d1098-bcd7-599f-b29b-563cc2d1e8e5",
+      "name": "Write",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        4350,
+        240
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "hasOutputParser": false,
+        "messages": {
+          "messageValues": [
+            {
+              "type": "SystemMessagePromptTemplate",
+              "message": "You write short, warm, plain-English notes for a village maths teacher. Simple words, short sentences. Reply with JSON only."
+            }
+          ]
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "26298a57-0099-59d8-9b8c-d7a939fdb3aa",
+      "name": "Model: Write (small, gpt-5.4-mini)",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        4350,
+        460
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5.4-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5.4-mini"
+        },
+        "options": {
+          "responseFormat": "json_object"
+        }
+      },
+      "credentials": {
+        "openAiApi": {
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "id": "c126ce5b-4f62-5baf-8bb2-6a6d25198070",
+      "name": "Build Docs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4600,
+        240
+      ],
+      "parameters": {
+        "jsCode": "// Step 5 assembly: same layout as the master Docs. Activity steps are copied word for word from the Activities data.\nconst c = $('Gather context').first().json;\nconst ctx = $('Pick days').first().json;\nconst plan = $('Write prompt').last().json.plan;\nconst G = ['A', 'B', 'C'], NAME = { A: 'A, Beginning', B: 'B, Middle', C: 'C, Advanced' };\nlet w = {};\nconst parseOut = v => { if (v && typeof v === 'object' && !('text' in v)) return v; let t = String((v && v.text) || '').replace(/<think>[\\s\\S]*?<\\/think>/g, ''); return JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1)); };\ntry { w = parseOut($json); } catch (e) {}\nconst LABEL = /\\b(weak|slow|struggl\\w*|behind|poor|bright|smart|dull|lazy|clever)\\b/i;\nconst clean = (v, fallback) => (typeof v === 'string' && v.trim() && !LABEL.test(v) && !/[A-Z]{3}-\\d{2}/.test(v)) ? v.trim() : fallback;\nconst esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n// \"1. ... 2. ...\" -> list items, text unchanged.\nconst splitSteps = s => {\n  const find = (k, from) => { const re = new RegExp('(^|\\\\s)' + k + '\\\\.\\\\s(?=[A-Z0-9\"(])', 'g'); re.lastIndex = from; let m, first = null;\n    while ((m = re.exec(s))) { const at = m.index + m[1].length; if (first === null) first = at; if (at === 0 || /[.)\"!?]\\s*$/.test(s.slice(0, at))) return at; } return first; };\n  let at = find(1, 0), k = 1; if (at === null) return [s];\n  const items = [];\n  while (at !== null) { const start = at + String(k).length + 2; const nx = find(k + 1, start); items.push(s.slice(start, nx === null ? s.length : nx).trim()); at = nx; k++; }\n  return items;\n};\nconst today = new Date().toISOString().slice(0, 10);\nconst out = [];\nfor (const d of plan.days) {\n  const day = String(d.day), added = d.plan_status === 'Added' || !c.day_info[day];\n  const base = added ? (String(d.insert_after || '').match(/\\d+/) || [c.scope[0].day])[0] : day;\n  const cur = c.day_info[base] || c.day_info[c.scope[0].day];\n  const unchanged = !added && cur.groups && G.every(g => { const x = d['group_' + g.toLowerCase()]; return x.activity_id === cur.groups[g].activity_id && !x.finish_first; });\n  if (unchanged) continue;\n  const wd = (w.days || []).find(x => String(x.day) === day) || {};\n  const topic = (c.scope.find(s => String(s.day) === base) || c.scope[0]).topic;\n  const strandName = topic.replace(/^T\\d+\\s*/, '');\n  const sheet = {}; const parts = [\n    '<h1>Day ' + esc(day) + ': ' + esc(strandName) + '</h1>',\n    '<h2>Whole class opening (5 min)</h2><p>' + esc(clean(wd.opening, cur.opening || 'Count together as a class.')) + '</p>',\n    '<h2>Rotation</h2><p>' + esc(clean(wd.rotation, cur.rotation || 'Teacher works with each group for 15 minutes while the other two practise.')) + '</p>'];\n  for (const g of G) {\n    const x = d['group_' + g.toLowerCase()], a = c.acts[x.activity_id], wg = (wd.groups || {})[g] || {};\n    const sameAsBefore = cur.groups && cur.groups[g].level_id.slice(0, 3) === x.level_id.slice(0, 3);\n    const check = clean(wg.check, (sameAsBefore && cur.checks && cur.checks[g]) || 'Show me one example and tell me how you did it.');\n    const ff = x.finish_first ? clean(wg.finish_first, 'Finish ' + x.finish_first + '.') : null;\n    parts.push('<h2>Group ' + NAME[g] + '</h2>' + (ff ? '<p><b>Finish first:</b> ' + esc(ff) + '</p>' : '') +\n      '<p><b>Skill (' + x.level_id + '):</b> ' + esc(c.levels[x.level_id] || '') + '</p>' +\n      '<p><b>Activity (' + a.activity_id + '):</b> ' + esc(a.title) + ', ' + esc(a.minutes) + ' min. <b>Materials:</b> ' + esc(a.materials) + '</p>' +\n      '<ol>' + splitSteps(String(a.steps_english)).map(s => '<li>' + esc(s) + '</li>').join('') + '</ol>' +\n      '<p><b>Check:</b> ' + esc(check) + '</p>');\n    sheet[g] = clean(wg.sheet, (x.finish_first ? 'Finish ' + x.finish_first + ', then ' : '') + a.title);\n  }\n  const html = parts.join('');\n  const b = 'edu_boundary_7f3a';\n  const doc_title = 'Day ' + day + ' - ' + topic + (added ? ' (added)' : ' (updated)');\n  const body = '--' + b + '\\r\\nContent-Type: application/json; charset=UTF-8\\r\\n\\r\\n' +\n    JSON.stringify({ name: doc_title, mimeType: 'application/vnd.google-apps.document', parents: [ctx.updated_folder_id] }) +\n    '\\r\\n--' + b + '\\r\\nContent-Type: text/html; charset=UTF-8\\r\\n\\r\\n' + html + '\\r\\n--' + b + '--';\n  out.push({ json: { day, topic, insert: added, row_number: added ? null : (c.scope.find(s => String(s.day) === day) || {}).row_number,\n    after_row: added ? (ctx.rows.find(r => r.day === base) || {}).row_number : null,\n    group_a_today: sheet.A, group_b_today: sheet.B, group_c_today: sheet.C, doc_title, body, reason: d.reason || '' } });\n}\nconst changes = Array.isArray(w.changes) && w.changes.length ? w.changes.map(s => clean(s, null)).filter(Boolean) : out.map(o => 'Day ' + o.json.day + ': ' + o.json.reason);\nconst summary = clean(w.feedback_summary, [c.feedback.what_went_well, c.feedback.what_went_wrong].filter(Boolean).join(' '));\nreturn out.map(o => ({ json: { ...o.json, feedback_summary: summary, changes } }));\n"
+      }
+    },
+    {
+      "id": "65b1b28a-9fb9-5e17-85e7-0f5c6f74ef35",
+      "name": "Drive: upload Doc",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4800,
+        240
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "multipart/related; boundary=edu_boundary_7f3a",
+        "body": "={{ $json.body }}",
+        "options": {}
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "id": "645dcea5-a529-5d9f-a137-bed18fbf3cb8",
+      "name": "Sheet changes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5000,
+        240
+      ],
+      "parameters": {
+        "jsCode": "// Existing rows: update in place. One added day: a new row below its anchor.\nconst ctx = $('Pick days').first().json;\nconst today = new Date().toISOString().slice(0, 10);\nconst k = name => ctx.headers.findIndex(x => x.trim().toLowerCase() === name.toLowerCase());\nconst col = name => { const i = k(name); return i < 0 ? null : String.fromCharCode(65 + i); };\nconst rowsByNo = new Map(ctx.rows.map(r => [r.row_number, r]));\nconst docs = $('Build Docs').all();\nconst data = []; let insert = null;\n$input.all().forEach((it, idx) => {\n  const d = docs[idx].json;\n  const link = '=HYPERLINK(\"https://docs.google.com/document/d/' + it.json.id + '/edit\",\"Open Day ' + d.day + (d.insert ? ' (added)' : ' (updated)') + '\")';\n  if (d.insert) {\n    const row = new Array(ctx.headers.length).fill('');\n    const put = (n, v) => { const i = k(n); if (i >= 0) row[i] = v; };\n    put('Day', d.day); put('Topic', d.topic); put('Group A today', d.group_a_today); put('Group B today', d.group_b_today); put('Group C today', d.group_c_today);\n    put('Plan', link); put('Plan status', 'Added ' + today);\n    insert = { after_row: d.after_row, values: row };\n    return;\n  }\n  const old = rowsByNo.get(d.row_number) || {};\n  const set = (n, v) => { const c = col(n); if (c) data.push({ range: \"'\" + ctx.sheet_title + \"'!\" + c + d.row_number, values: [[v]] }); };\n  set('Group A today', d.group_a_today); set('Group B today', d.group_b_today); set('Group C today', d.group_c_today);\n  set('Plan', link); set('Plan status', 'Updated ' + today);\n  if (!old.original_cell) set('Original plan', old.plan_cell || '');\n});\n// The added row goes in after the updates, so earlier row numbers stay valid.\nconst requests = insert ? [{ insertDimension: { range: { sheetId: ctx.sheet_gid, dimension: 'ROWS', startIndex: insert.after_row, endIndex: insert.after_row + 1 }, inheritFromBefore: true } }] : [];\nconst insertValues = insert ? [{ range: \"'\" + ctx.sheet_title + \"'!A\" + (insert.after_row + 1), values: [insert.values] }] : [];\nreturn [{ json: { body: { valueInputOption: 'USER_ENTERED', data }, requests, insertValues } }];\n"
+      }
+    },
+    {
+      "id": "ac61d01e-ea77-581d-82f9-7ab4b13f6cab",
+      "name": "Sheets: update plan rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5200,
+        240
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Pick days').first().json.sheet_id + '/values:batchUpdate' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {}
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "id": "260924cb-d41b-5da1-a91b-6c64aba1f316",
+      "name": "Extra day?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5400,
+        240
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $('Sheet changes').first().json.requests.length > 0 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "e5c1baca-6964-5463-a1ec-d3a4d8ec78f9",
+      "name": "Sheets: insert extra day row",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5600,
+        140
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Pick days').first().json.sheet_id + ':batchUpdate' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ requests: $('Sheet changes').first().json.requests }) }}",
+        "options": {}
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "id": "a9a05069-fab0-5375-9e46-326e35ba4a68",
+      "name": "Sheets: fill extra day row",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5800,
+        140
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Pick days').first().json.sheet_id + '/values:batchUpdate' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ valueInputOption: 'USER_ENTERED', data: $('Sheet changes').first().json.insertValues }) }}",
+        "options": {}
+      },
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "id": "b216ff5f-eac1-58ac-8f8c-0d4d56c6ddd7",
+      "name": "Email details",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6000,
+        240
+      ],
+      "parameters": {
+        "jsCode": "const ctx = $('Pick days').first().json;\nconst d = $('Build Docs').first().json;\nreturn [{ json: { teacher_email: ctx.teacher_email, sheet_url: ctx.sheet_url, day: ctx.today.day, topic: ctx.today.topic, feedback_summary: d.feedback_summary, changes: d.changes } }];\n"
+      }
+    },
+    {
+      "id": "98bc65db-b4e6-5a70-b3f6-43f9b26535f1",
+      "name": "Run 1.4 Email the teacher",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        6200,
+        240
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "5giLvDE32xGkS9jB",
+          "mode": "id"
+        },
+        "mode": "once",
+        "options": {}
+      }
+    },
+    {
+      "id": "1d3e1fd5-389d-50f6-a9ea-551397d117f0",
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -60
+      ],
+      "parameters": {
+        "width": 520,
+        "height": 260,
+        "content": "## Replanner v2 (lite)\nSame input and outputs as the old 1.3. Steps: 0 gather (no AI) → 1 Diagnose → 2 Plan (IDs only) → 3 Rule check (code, up to 2 retries, then old plan kept + email to Rira) → 4 AgenticOrg challenger (agent id in Config; if it errors the run continues) → 5 Write + Build Docs (code copies activity steps) → 6 Docs, sheet, 1.4 Email the teacher.\n\nModels: OpenAI gpt-5.5 (Plan), gpt-5.4-mini (Diagnose, Write).\n\nREADME: rishabhrawat-edu/feedback-loop/replanner-v2.md"
+      }
+    }
+  ],
+  "connections": {
+    "Model: Diagnose (small, gpt-5.4-mini)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Diagnose",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Model: Plan (strong, gpt-5.5)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Plan",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Model: Write (small, gpt-5.4-mini)": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Write",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Called by intake": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test with sample": {
+      "main": [
+        [
+          {
+            "node": "Sample: Day 2, Partly",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sample: Day 2, Partly": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Pick days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick days": {
+      "main": [
+        [
+          {
+            "node": "One item per Doc",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "One item per Doc": {
+      "main": [
+        [
+          {
+            "node": "Drive: read day Docs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive: read day Docs": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Activities",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: Activities": {
+      "main": [
+        [
+          {
+            "node": "Sheets: Levels",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: Levels": {
+      "main": [
+        [
+          {
+            "node": "Gather context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gather context": {
+      "main": [
+        [
+          {
+            "node": "Diagnose prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Diagnose prompt": {
+      "main": [
+        [
+          {
+            "node": "Diagnose",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Diagnose": {
+      "main": [
+        [
+          {
+            "node": "Read diagnosis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read diagnosis": {
+      "main": [
+        [
+          {
+            "node": "Plan prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Plan prompt": {
+      "main": [
+        [
+          {
+            "node": "Plan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Plan": {
+      "main": [
+        [
+          {
+            "node": "Rule check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rule check": {
+      "main": [
+        [
+          {
+            "node": "Rules OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AgenticOrg: challenge": {
+      "main": [
+        [
+          {
+            "node": "Read challenge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read challenge": {
+      "main": [
+        [
+          {
+            "node": "Revise?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Old plan kept: email Rira": {
+      "main": [
+        [
+          {
+            "node": "Gmail: tell Rira",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write prompt": {
+      "main": [
+        [
+          {
+            "node": "Write",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write": {
+      "main": [
+        [
+          {
+            "node": "Build Docs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Docs": {
+      "main": [
+        [
+          {
+            "node": "Drive: upload Doc",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive: upload Doc": {
+      "main": [
+        [
+          {
+            "node": "Sheet changes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheet changes": {
+      "main": [
+        [
+          {
+            "node": "Sheets: update plan rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: update plan rows": {
+      "main": [
+        [
+          {
+            "node": "Extra day?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: insert extra day row": {
+      "main": [
+        [
+          {
+            "node": "Sheets: fill extra day row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: fill extra day row": {
+      "main": [
+        [
+          {
+            "node": "Email details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email details": {
+      "main": [
+        [
+          {
+            "node": "Run 1.4 Email the teacher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rules OK?": {
+      "main": [
+        [
+          {
+            "node": "Ask challenger?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Retry?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask challenger?": {
+      "main": [
+        [
+          {
+            "node": "AgenticOrg: challenge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Write prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Revise?": {
+      "main": [
+        [
+          {
+            "node": "Plan prompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Write prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retry?": {
+      "main": [
+        [
+          {
+            "node": "Plan prompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Old plan kept: email Rira",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extra day?": {
+      "main": [
+        [
+          {
+            "node": "Sheets: insert extra day row",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email details",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "nodeGroups": [],
+  "activeVersionId": "6a8285da-9e15-4847-b33c-159b0204c4a9",
+  "versionCounter": 10,
+  "sourceWorkflowId": null,
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

@@ -1,0 +1,168 @@
+
+Re Education
+Re Education
+
+
+Guest Blogs
+Multi-Grade Multi-Level (MGML) Classrooms in India: The problem & approaches
+Parthajeet Das, Director, Central Square Foundation, India
+Feb 08, 2024
+
+
+
+Photo : Snehankita Borah
+(The opening part of this article is in Issue #4. Please read that first).
+
+I will keep it simple and try to share five broad steps that can be considered - Acknowledge, Assess, Slow it Down, Teach well & Support. Let’s dive in.
+
+Clearly, the first thing is to acknowledge that MGML is a problem and it exists in our systems. It is not enough for academicians and researchers or CSOs to raise a hue and cry about it in conferences. The real system-actors (the movers and shakers of the system) need to accept this problem. The problem is while some of them acknowledge the problem in private, they do not do so in public.
+
+In a conversation with the senior education bureaucrat of a state, while sharing a report on ‘Systemic drivers for foundational learning (CSF)’, and sharing about MGML classrooms as a major challenge, he flatly refused that it could be the case in his state. It isn’t too difficult to figure this out – simply divide the number of total number of primary school teachers by the total number of primary schools in your region/state. If you get an average of less than 5, you have an MGML problem. In another state, the primary school teachers’ training module had a topic on MGML that started with “Why MGML classrooms are good”. It’s simple, if we don’t even acknowledge the problem, and we have doggedly decided to be an ostrich and bury our head in a hole, we will never solve the problem.
+
+Second, if you realise that you have fallen into a pit, the first thing to do is to assess the depth and width of the hole i.e. understand the problem well, so that you can get out of it, right? I am talking about diagnosing the problem at system and at a classroom level. At system level, it’s not enough to know that we have a MGML problem, the state must figure out the extent of it. How many schools are single teacher schools (close to 9% of all schools in India still are single teacher schools)? How many two-teacher, three-teacher ones etc.? Which schools have adequate classrooms but do not have adequate teachers and vice-versa? Then, strategies could be planned out. Nearby schools with very low enrolment can be merged. New posts can be created for schools which have adequate enrolment but no teachers. New classrooms can be built etc. All these are easier said than done; require large budgets and larger political will but the starting point is to know the extent of the problem in details.
+
+At school or classroom level, we need to focus on easy-to-administer, simple, student assessment by teachers as a part of their instruction. The purpose of these assessments is simply to “Know Thy Children!”.  The purpose of these classroom assessments should never be to “report progress” to the system i.e. higher officers, authorities or the occasional NGO or funders or multilateral agency visitors on school visits. The purpose is also not to “track the learning levels of all children through a technology-based platform” or “generate evidence” or take “data-driven decisions”. The purpose is just one - to teach (and teach well).
+
+While the teachers can undertake many types of formative assessments which can be used by them to check for understanding and progress among children as the instruction is happening or after periodic intervals (weekly, monthly, end of term etc.), the school education system (state, district) might need some help to assess the children well. The first area will be to design the appropriate assessment framework – so that we are not assessing too much or too less and we are checking for mastery of all critical competencies. Hence, assessing the children of a particular grade might not be as straightforward as asking a few questions from the end of the chapter of the textbook but might need scaffolding (n, n-1, n-2 levels) and a bit of technical help to set items and analyse the results. Finally, the state might need support to use the findings of the assessments to design and plan for academic inputs of learning resources, training etc. But, let me say it again, the purpose of all these assessments is to teach (and teach well)! Period.
+
+
+
+
+Multigrade classroom - separate blackboards
+So, how does one teach after assessing and knowing with reasonable details where each child is? First, take it easy! Slow it down! Imagine the plight of the teachers who have half or one-third the time to complete the syllabus as she has to teacher two or three grades in the same class duration and imagine the plight of the students, particularly the struggling learners, for whom the precious class time to master a particular learning outcome is also reduced by one third or half. Hence, one of my colleagues Srivathsan Ramaswamy from the Madhi Foundation says
+
+“the least we can do for our teachers is make them teach 1.75x than 3x. We need to make our curriculum move slower in MG contexts to maximise time on task for children and teachers”.
+
+This is not “watering down” of the learning outcomes or “lowering of expectations” but ensuring that the focus of the teachers shifts from completing the syllabus to children mastering some (basic) competencies.
+
+In this paper by Lant Pritchett, “Slow down, you’re going too fast: matching curricula to student learning levels” Lant and his co-author Amanda Beaty, demonstrate the consequences of curriculum mismatch, construct a model that portrays learning as the result of synchronizing student skill and instructional levels. Their simulation shows that countries with identical potential learning could have divergent learning outcomes due to a gap between curricular and actual pace, and the country that goes faster has much lower cumulative learning. Paradoxically, there is greater learning potential if curricula and teachers slow down. Again, they talk to many others such as Rukmini Banerji, Jishnu Das, Luis Crouch, Kathik Muralidharan etc who all say similar things about it from experience and research.
+
+Research done under the RISE programme led by Lant and supported by Michelle Kaffenberger and Marla Spivack also confirm in this blog that “learning trajectories are too shallow and too flat, preventing girls and boys from reaching either threshold or aspirational learning goals. Shallow learning trajectories can be an important cause of dropout for girls and boys.” They discuss “how the learning trajectory starts too shallow (too little learning in the early years) and then is too flat, often because the teaching and curriculum race ahead”. They have also looked at longitudinal studies such as Young Lives etc. to understand deeper qualitative reasons such as “..that girls—and boys—drop out of school because they realise they are not getting anything out of their schooling experience and so they seek a different path towards a secure future, such as marriage or employment (Kaffenberger et al., 2021a)..”.
+
+Then, Teach the children well by meeting them at their level. Yes, I am not saying anything new. I don’t need to. You might have read a lot about Teaching At the Right Level (TaRL) which many practitioners, prominent among them being Pratham, have tried across many contexts and there has been enough of research RCT and otherwise conducted by researchers of repute such as the Nobel-prize winning Abhijeet Banerji and Esther Duflo which confirm the impact and usefulness of such interventions. Teaching at the right level (TaRL) is almost intuitive where you pace and tailor the teaching to the individual need of the child.
+
+How TaRL has been taken up by few state governments is that they have started with an initial assessment of learning levels of children and then grouped them into different ‘levels’ based on their ability and then peg the instruction to the groups differently. The children are assessed after a period of time and then if they have mastered a level, they ‘move’ to the next level. Sounds like good teaching!  There is enough and more published research (RCT or otherwise) on the effectiveness of TaRL in programmes run by Pratham in India and Africa. My only caution is that TaRL as a programme is at best a short-term measure to address the gaps due to poor foundational learning in primary schools and not a substitute to building strong foundational skills among children and ensuring all children achieve them before progressing to the higher/next grade.
+
+That to me is the essence of good, determined teaching. It’s no good to keep on assessing the children and knowing their learning levels but to support the struggling learners (in particular) and persist until they reach the right levels.
+
+Finally, everyone needs support including teachers! These are the teachers of our children we are talking about. They might not always look like they are the most committed, most motivated about the children, parents and community; trust me, they are the only ones who care and can do anything about improving the situation.
+
+They are like any of us adults and their job is like any of ours if not more difficult or stressful. One of the most serious minds and practitioners, Benjamin Piper, once said :
+
+“..the job of teachers is unique in a way that for most parts of the time when she is doing her job, the teacher is alone with children, not with another adult or peer.”
+
+In India, as we have discussed in the beginning, in a large majority of primary schools, she is the only one of a few teachers in the school and even if she has many colleagues there is rarely the opportunity to interact with each other, work with each other and learn from each other. Hence, the need for support like any other profession.
+
+What is the nature of this support and how does one provide it then? Essentially, support can be provided either one-time or continuously. One-time support could be in the form of thoughtfully prepared teaching-learning materials that can help a teacher handle and manage a MGML classroom followed by training which helps the teachers to understand how to use the materials in the classrooms effectively. We all know or should know that teacher instruction time is precious and worth its weight in gold.
+
+It is helpful for many teachers if some help is available in terms of materials (teacher handbooks, workbooks for children, activities and materials for children) which make the decision making process (what to teach, how to teach it effectively, how much time will this take, how to handle group A while giving task to group B) for teachers easy, This is where material, lesson plans with activities for MGML classrooms can come in handy. Put aside for the moment the teacher agency versus structured pedagogy argument here. Children are not learning, teachers are struggling to teach, what agency are we talking about and for what?
+
+The second nature of support is more important in my view, i.e. providing support at the classrooms on a regular basis. If saying something once, no matter how effectively one says it solved the problems, then the problem of cigarette smoking could have been solved by the statutory warning of “Tobacco causes painful death” or training people on the harmful effects of smoking on one’s own self and family. This is where the roles of coaches and mentors to provide support through visits, observation and conversations comes in. 
+
+We are already seeing the impact this level of supportive supervision can have at scale. In a large state, where a cadre of HMs, cluster, block and district officers were mobilized, trained and oriented to provide supportive supervision (this is important and yet hard to get!) to primary grade teachers, we are beginning to see change even though the effect sizes are very small yet. Teachers and the people who are supporting teachers both are getting a sense that the system cares and that is making people try harder, try different things and causing small and big change. Yes, all of these needs to be institutionalized and continued in steady-state but this gives me hope. Please remember one thing, the support is primary : the check-list of visit, the classroom observation tool, the app that is used to capture data, the dashboards, the analytics behind it are all secondary. As the legendary spin bowler from India Erapalli Prasanna would say “..length is mandatory, line is optional...”.
+
+In summary, little of this is anything new or novel in the approach or pedagogy for MGML. My argument is that we don’t need new innovations or solutions but more purposeful and thorough practice (implementation). You may or may not have heard about some or the other approaches I have discussed. If your experience of such programmes doesn’t match up to what these research confirm, please remember that the tool isn’t necessarily ineffective but the application, context or timing might not be (individually or collectively) suitable. The Indian spiritual tradition has an analogy for seekers who denounce and doubt everything after a few unsuccessful attempts at finding God “..if you fail in getting jewels by diving deep into the ocean, that doesn’t mean that the ocean doesn’t have any!”. So, let’s keep supporting the teachers to do the one (major) thing we have to do as a system - get the children who come to our schools to learn (and enjoy) !
+
+Leave a comment below or here, in the chat.
+
+Subscribe to Re Education
+By Andy Brock · Launched 3 years ago
+A newsletter about international education development
+rishabhrawat35@gmail.com
+password
+rishabhrawat35@gmail.com
+Subscribe
+By subscribing, you agree to Substack's Terms of Use, and acknowledge its Information Collection Notice and Privacy Policy.
+Discussion about this post
+Write a comment...
+
+Y A Padmanabha Rao
+Feb 5, 2025
+Edited
+
+India's educational system has long faced significant challenges related to teacher shortages, overcrowded classrooms, and a vast disparity in educational resources between rural and urban areas. Here, it is pertinent to note that one notable ‘approach’, not only ‘scenario’, to address these issues is the Multi-Grade Multi-Level (MGML) classroom model, which is an innovative response to the complexities of managing heterogeneous student populations in under-resourced schools. MGML (Multi-Grade, Multi-Level) classrooms can be described as environments where a single teacher is responsible for teaching multiple grades and varying learning levels simultaneously. This arrangement is primarily a response to teacher shortages and spatial constraints, particularly in rural and government schools. As rightly pointed out by Mr. Parthajeet Das, over 30% of India’s government schools face MGML scenarios due to small student enrollments spread across several grades, with an average of 50 to 60 students across all grades. As a result, MGML becomes a practical necessity in these contexts.
+
+However, it is essential to recognize that MGML is not merely a logistical necessity; it should also be viewed as a conscious pedagogical choice. It can be a powerful strategy for transforming rural education—addressing teacher shortages while simultaneously nurturing effective learning. Through our work At RiVER, we have observed first-hand how the MGML scenario can be used to empower educators, optimizing their time and nurturing peer learning. It can also support self-directed, differentiated instruction that caters to diverse learning needs. In this context, I view MGML not just as a practical response to systemic challenges, but as a transformative methodology rooted in an educational philosophy that emphasizes individuality, personal understanding, and self-awareness.
+
+Policy Mismatch Difficulties:
+
+I agree, as mentioned in the post, that the disconnect between policies like the Right to Education (RTE) and the ground realities is a critical issue. Policies such as the RTE’s school proximity norms and the No-Detention Policy, though well-intentioned, have inadvertently led to the creation of small, underfunded schools and classrooms where students of varying age groups and academic levels are combined. These policy misalignments significantly contribute to the need for MGML classrooms. While the RTE aims to make education more accessible, the lack of teacher allocation tailored to grade-specific needs further worsens the problem.
+
+In this context, I believe it is essential to adapt the national curriculum to local contexts. Through our work at RIVER, we have observed that many policy challenges can be addressed through practical, context-specific solutions, such as community involvement, flexible learning approaches, and localized curricula. While it is crucial to examine and revise existing policies, it is equally important to adopt pragmatic, context-sensitive pedagogical adjustments to effectively meet the needs of MGML classrooms.
+
+Decreasing Enrolments and Meaningful Engagement:
+
+The post aptly highlights the impact of declining government school enrolments, exacerbated by the rise of private schools. With fewer students, classrooms become smaller, and when combined with a limited number of teachers, they inevitably turn into multi-grade, multi-level settings. This dynamic significantly undermines both the efficiency and quality of teaching. In traditional classrooms, disengaged students often receive minimal individual attention due to the teacher’s divided focus. Moreover, the lack of space and resources further hampers effective teaching, pushing teachers to rely on makeshift solutions such as curtains or shared spaces.
+
+This challenge, however, can also be creatively addressed through flexible pedagogical practices. For instance, the RiVER approach stands out with its highly structured, activity-rich programs, where each student follows a unique, individualized learning path. While the overall framework remains consistent for all students within the MGML model, the pace of learning is tailored to meet the needs of each student. The emphasis on self-paced learning and peer support ensures that schools, even with fewer students, can still offer a high-quality educational experience. In RiVER schools, teachers act as facilitators, guiding students through a range of activities designed to maintain meaningful engagement. Students are grouped according to their learning needs, and ongoing continuous, formative assessments allow for immediate intervention whenever learning gaps arise. Therefore, it is essential to view MGML not only as a challenge but also as an opportunity for innovative transformation in education.
+
+Implementation Challenges:
+
+As the post highlights, MGML classrooms face significant challenges, particularly in terms of resource constraints and teacher training. It rightly points out the difficulties in implementing MGML solutions, noting that providing a teacher for each grade or building additional classrooms would require substantial financial investment and strong political will. Additionally, resistance from local communities and teacher unions to reform measures, such as school mergers, further complicates the situation. Teacher training and general resistance to change also present considerable obstacles. In this context, the importance of community involvement and targeted teacher training initiatives cannot be overstated. These are crucial elements for overcoming the barriers to effective MGML implementation.
+
+‘Acknowledge, Assess, Slow it Down, Teach Well & Support’:
+
+Mr. Parthajeet Das’s five-point strategy—‘Acknowledge, Assess, Slow it Down, Teach Well & Support’—is crucial for effectively addressing the MGML scenario and is urgently needed. Empowering teachers with proper training and resources is essential for managing diverse classrooms. Additionally, creating a learning environment that integrates community knowledge and real-life experiences can significantly enhance student engagement. Implementing flexible, self-paced learning systems tailored to the individual needs of students ensures that every learner receives the attention and support they require. Furthermore, bottom-up, community-driven approaches can play a crucial role in driving transformational change in education.
+
+I believe that the successful management of the MGML scenario in India hinges on the synergy between policy reform and innovative educational practices. In this context, the RIVER model offers one such practical, community-oriented solution. With the right strategies in place, I am optimistic that the future of MGML classrooms in India can provide a more inclusive, accessible, and equitable educational experience for all students.
+
+Y A Padmanabha Rao:
+
+Y A Padmanabha Rao, co-founder and former director of the Rishi Valley Institute for Educational Resources (RiVER), alongside Rama Rao, director, has pioneered a transformative approach to education. Together, they developed a learner-guided teaching methodology, within the Multi-Grade Multi Level scenario, that not only elevates student learning but also revitalizes the role of teachers, fostering a deep sense of responsibility. This innovative, cost-effective approach has greatly enhanced the quality of education in rural areas, leading to improved learning outcomes, greater teacher engagement, and heightened school accountability.
+
+Under the Raos' leadership, RiVER has forged impactful partnerships with both government and private institutions across India and beyond. The model has been adopted by over 300,000 schools in 15 languages, benefiting more than 20 million children. Additionally, over 900,000 teachers have been trained in this proven methodology. RiVER’s success was recognized with the prestigious Global Development Network Award for ‘Most Innovative Development Project – 2004’. Ashoka fellows since 2003, the Raos were honored with the Schwab Foundation Social Entrepreneur of the Year award, in 2009, at the World Economic Forum for their outstanding contribution to education in India -http://www.youtube.com/watch?v=6qzptfCadU0
+
+Several Universities in Germany, France, USA and South Africa have initiated long-term collaborative projects with RIVER. The link of an article on RIVER’s pedagogical model that appeared in the New York Times is given below:
+
+https://www.nytimes.com/2018/12/04/opinion/teaching-children-reform-
+
+education.html
+
+RiVER:
+
+The RiVER model has been tested both on a pilot scale and large scale across states covering three lakh schools in 15 different languages. It has been proved to be effective during its implementation, as per UNESCO reports: the attendance has increased by 80%, reduced drop-out rate by 30% and improved student learning by 40% compared to a more traditional system. RIVER approach is also being explored for adult literacy in tribal areas, early childhood education (ages 3-6), special needs education, and crisis zones like refugee camps and war zones. Globally, RIVER-inspired projects are active in Ethiopia, Bangladesh, Sri Lanka, Germany, Kenya, and Nepal.
+
+Like
+Reply
+Share
+
+Re Education : Issue #22 - Summer Reflections
+Seeing through a glass darkly
+Aug 7, 2025
+
+7
+
+2
+
+1
+
+
+Re Education : Issue #27 - Education Predictions 2026
+The "Consequences" of 2025
+Jan 15
+
+5
+
+2
+
+1
+
+
+Re Education : Issue #16 - Philanthropy in education : of Logos and Egos
+A newsletter about international education development
+Feb 17, 2025
+
+9
+
+
+
+
+Ready for more?
+email
+password
+rishabhrawat35@gmail.com
+Subscribe
+© 2026 Andy Brock · Privacy ∙ Terms ∙ Collection notice
+Start your Substack
+Get the app
+Substack is the home for great culture

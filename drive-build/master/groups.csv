@@ -1,0 +1,4 @@
+group,name,description,default_entry_NUM,default_entry_OPS,default_entry_GEO,default_entry_MEA,default_entry_DAT
+A,Beginning,"Children at the start of the ladder; activities are oral or hands-on because most cannot read yet",NUM-01,OPS-01,GEO-01,MEA-01,DAT-01
+B,Middle,"Children who have basic skills and are building fluency; mix of oral and written work",NUM-04,OPS-08,GEO-03,MEA-06,DAT-03
+C,Advanced,"Children working at upper-primary level; more written and analytical tasks",NUM-07,OPS-15,GEO-05,MEA-10,DAT-05

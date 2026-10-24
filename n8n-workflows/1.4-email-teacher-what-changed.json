@@ -1,0 +1,95 @@
+{
+  "updatedAt": "2026-10-24T12:34:13.735Z",
+  "createdAt": "2026-10-24T10:54:54.890Z",
+  "id": "5giLvDE32xGkS9jB",
+  "name": "1.4 Email the teacher what changed in the plan",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "name": "Called by replanner",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ae609087-7b06-4b50-825f-4b356b1d627d"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Simple plain-text email. Input: teacher_email, sheet_url, day, topic, feedback_summary, changes[]\nconst j = $json;\nconst changes = (j.changes || []).slice(0, 4).map(c => '- ' + c).join('\\n');\nconst subject = 'Your maths plan is updated (Day ' + j.day + (j.topic ? ', ' + j.topic : '') + ')';\nconst body = [\n  'Hi,',\n  '',\n  'Thank you for telling us how Day ' + j.day + ' went.',\n  '',\n  'What you told us: ' + j.feedback_summary,\n  '',\n  'What we changed:',\n  changes || '- Nothing needed to change.',\n  '',\n  'Your full plan is here: ' + j.sheet_url,\n  '',\n  'Thanks,',\n  'Your maths helper',\n].join('\\n');\nconst raw = [\n  'To: ' + j.teacher_email,\n  'Subject: =?UTF-8?B?' + Buffer.from(subject).toString('base64') + '?=',\n  'Content-Type: text/plain; charset=UTF-8',\n  '',\n  body,\n].join('\\r\\n');\nreturn [{ json: { subject, body, raw: Buffer.from(raw).toString('base64').replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '') } }];"
+      },
+      "name": "Write email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "c8cb4da7-b17b-45d6-b34b-7b042e003103"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ raw: $json.raw }) }}",
+        "options": {}
+      },
+      "name": "Gmail: send",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "e2076e9f-611c-4f42-9362-15196bf50e6f"
+    }
+  ],
+  "connections": {
+    "Called by replanner": {
+      "main": [
+        [
+          {
+            "node": "Write email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write email": {
+      "main": [
+        [
+          {
+            "node": "Gmail: send",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "nodeGroups": [],
+  "activeVersionId": "4f5a83eb-f589-4bb1-864f-522d1372074a",
+  "versionCounter": 1,
+  "sourceWorkflowId": null,
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

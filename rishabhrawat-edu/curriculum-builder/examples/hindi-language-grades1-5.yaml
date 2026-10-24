@@ -1,0 +1,63 @@
+# Example input: Hindi language arts (grades 1-5)
+# Demonstrates how to configure the toolkit for a language subject.
+
+# --- Required fields ---
+
+subject_name: "Hindi Language"
+subject_code: "HINDI"
+grade_start: 1
+grade_end: 5
+output_language: "hi"        # Output in Hindi
+
+# Student groups — level-based, not grade-based.
+# Children are placed into groups by a starting check, not by their grade.
+groups:
+  - group_id: "A"
+    group_label: "समूह A (शुरुआती)"
+    description: "Children at the start of the ladder; oral, phonics and storytelling"
+    teaching_mode: "oral, phonics and storytelling"
+  - group_id: "B"
+    group_label: "समूह B (मध्य)"
+    description: "Children building fluency; mix of oral, reading and writing"
+    teaching_mode: "reading and guided writing"
+  - group_id: "C"
+    group_label: "समूह C (उन्नत)"
+    description: "Children at upper-primary level; reading, writing and composition"
+    teaching_mode: "reading, writing and composition"
+
+# --- Optional fields ---
+
+# No strand suggestions — let the textbook researcher propose them
+# based on what the Rimjhim textbooks cover.
+# Likely strands: reading, writing, oral expression, grammar, vocabulary
+
+classroom_model: "MGML"
+
+available_materials:
+  - blackboard
+  - chalk
+  - slates
+  - notebooks
+  - pencils
+  - story cards
+  - picture charts
+  - alphabet cards
+  - word cards
+  - children's storybooks (small library)
+
+unavailable_materials:
+  - projector
+  - tablets
+  - computers
+  - printed worksheets
+  - audio/video equipment
+
+class_size_range: "20-40"
+period_minutes: 45           # 3 blocks of 15 min (one per group rotation)
+total_days: 150              # Day-numbered plans, not week-based
+
+# Source files to place in sources/ folder:
+# - NCERT Rimjhim textbooks for grades 1-5 (PDF or text)
+# - Das, A.K. MGML article (same pedagogy source as maths)
+# - NIPUN Bharat FLN goals document (covers foundational literacy)
+# - Pratham / StoryWeaver reading level framework (optional)

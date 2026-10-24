@@ -1,0 +1,58 @@
+level_id,strand_id,level_no,can_statement,ncert_lo_code,nipun_goal,prerequisite_level_id,typical_grade,bloom
+NUM-01,NUM,1,"Counts objects up to 20 and says how many there are",M1-01,N0-01,,1,remember
+NUM-02,NUM,2,"Reads and writes numerals up to 99 and knows tens and ones",M1-02;M1-05,N1-01,NUM-01,1,remember
+NUM-03,NUM,3,"Compares and orders numbers up to 99 (more, less, equal, smallest to largest)","M1-03;M1-04",N1-02,NUM-02,1,understand
+NUM-04,NUM,4,"Reads, writes and compares numbers up to 999 using place value (hundreds, tens, ones)",M2-01;M2-03,N2-01,NUM-03,2,understand
+NUM-05,NUM,5,"Counts forward and backward in jumps of 2, 5 and 10",M2-02,,NUM-04,2,apply
+NUM-06,NUM,6,"Reads, writes and compares numbers up to 9999 using place value",M3-01,N3-01,NUM-05,3,understand
+NUM-07,NUM,7,"Reads, writes and compares numbers up to five or six digits using place value",M4-01,,NUM-06,4,understand
+NUM-08,NUM,8,"Reads, writes and compares large numbers (lakhs and crores) using place value",M5-01,,NUM-07,5,understand
+NUM-09,NUM,9,"Finds factors, multiples and uses simple divisibility tests",M5-03,,NUM-08,5,apply
+OPS-01,OPS,1,"Adds and subtracts numbers up to 20 using objects or pictures",M1-06,N1-03,,1,remember
+OPS-02,OPS,2,"Solves simple everyday addition and subtraction word problems with small numbers",M1-07,,OPS-01,1,apply
+OPS-03,OPS,3,"Adds and subtracts two-digit numbers with and without carrying or borrowing",M2-04,N2-02,OPS-02,2,apply
+OPS-04,OPS,4,"Solves everyday word problems using addition and subtraction of two-digit numbers",M2-05,,OPS-03,2,apply
+OPS-05,OPS,5,"Understands multiplication as repeated addition and uses tables of 2, 3, 4, 5 and 10",M2-06,N2-03,OPS-04,2,understand
+OPS-06,OPS,6,"Shares objects equally into groups and understands basic division",M2-07,,OPS-05,2,understand
+OPS-07,OPS,7,"Identifies half and quarter of a whole object or collection",M2-08,,OPS-06,2,understand
+OPS-08,OPS,8,"Adds and subtracts three-digit numbers including with carrying and borrowing",M3-02,N3-02,OPS-04,3,apply
+OPS-09,OPS,9,"Multiplies a two-digit number by a one-digit number and knows tables up to 10",M3-03;M3-05,N3-03,OPS-05,3,apply
+OPS-10,OPS,10,"Divides a number by a one-digit number and links division to multiplication",M3-04,N3-03,OPS-09,3,apply
+OPS-11,OPS,11,"Solves everyday word problems using all four operations",M3-06,,OPS-10,3,apply
+OPS-12,OPS,12,"Understands fractions (half, one-third, one-fourth) and compares simple fractions",M3-07,N3-04,OPS-07,3,understand
+OPS-13,OPS,13,"Multiplies and divides multi-digit numbers by one-digit and two-digit numbers",M4-03,,OPS-10,4,apply
+OPS-14,OPS,14,"Solves multi-step everyday problems using the four operations",M4-04,,OPS-13,4,analyse
+OPS-15,OPS,15,"Understands equivalent fractions and adds and subtracts fractions with the same denominator",M4-05,,OPS-12,4,apply
+OPS-16,OPS,16,"Uses decimal notation for money and lengths (metres and centimetres)",M4-06,,OPS-15,4,apply
+OPS-17,OPS,17,"Does the four operations on large numbers and estimates answers",M5-02,,OPS-13,5,apply
+OPS-18,OPS,18,"Adds, subtracts and compares fractions with like and unlike denominators",M5-04,,OPS-15,5,apply
+OPS-19,OPS,19,"Reads, writes, compares and adds decimals; converts between simple fractions and decimals",M5-05,,OPS-16,5,apply
+OPS-20,OPS,20,"Solves everyday problems using the four operations, fractions and decimals",M5-06,,OPS-19,5,analyse
+OPS-21,OPS,21,"Uses simple ratio or unitary-method thinking in everyday situations",M5-10,,OPS-20,5,analyse
+GEO-01,GEO,1,"Names and describes basic 2-D and 3-D shapes from their features (sides, corners, faces)",M1-08,N1-04,,1,remember
+GEO-02,GEO,2,"Sorts shapes by properties and identifies faces, corners, straight and curved lines","M2-02 (textbook Ch2,4,5)",,GEO-01,2,understand
+GEO-03,GEO,3,"Describes 2-D and 3-D shapes in detail and finds lines of symmetry in simple figures",M3-11,,GEO-02,3,understand
+GEO-04,GEO,4,"Identifies angles, lines and the faces and edges of 3-D shapes; uses direction and grids",M4-10,,GEO-03,4,understand
+GEO-05,GEO,5,"Finds symmetry in shapes and extends patterns involving shapes and numbers",M4-11,,GEO-04,4,apply
+GEO-06,GEO,6,"Identifies and measures angles and describes properties of 2-D and 3-D shapes",M5-11,,GEO-05,5,apply
+GEO-07,GEO,7,"Finds and uses symmetry, tiling and reflection in designs",M5-13,,GEO-06,5,apply
+MEA-01,MEA,1,"Compares objects by length, weight or capacity using everyday words and non-standard units",M1-10,N1-04,,1,remember
+MEA-02,MEA,2,"Names days of the week, sorts events by time (before, after, today, tomorrow)",M1-11,,MEA-01,1,remember
+MEA-03,MEA,3,"Recognises coins and notes and does simple money addition and subtraction",M2-11,,MEA-02,2,apply
+MEA-04,MEA,4,"Measures length, weight and capacity using simple standard units (cm, m, kg, litre)",M2-09,N2-04,MEA-01,2,apply
+MEA-05,MEA,5,"Reads time to the hour and half hour and knows days, weeks and months",M2-10,N2-04,MEA-02,2,understand
+MEA-06,MEA,6,"Measures and estimates length, weight and capacity; converts between larger and smaller units",M3-08,,MEA-04,3,apply
+MEA-07,MEA,7,"Reads time in hours and minutes from a clock and finds how long something takes",M3-09,N3-04,MEA-05,3,apply
+MEA-08,MEA,8,"Works with money including bills, change and simple transactions",M3-10,N3-04,MEA-03,3,apply
+MEA-09,MEA,9,"Measures and converts units of length (cm, m, km), weight (g, kg) and capacity (ml, l)",M4-09,,MEA-06,4,apply
+MEA-10,MEA,10,"Reads time on a 12-hour and 24-hour clock and works out durations",M4-08,,MEA-07,4,apply
+MEA-11,MEA,11,"Finds the perimeter of simple shapes and the area of shapes by counting squares",M4-07,,MEA-09,4,apply
+MEA-12,MEA,12,"Converts units of length, weight, capacity and time across all standard units",M5-09,,MEA-09,5,apply
+MEA-13,MEA,13,"Understands volume and capacity and measures them with standard units",M5-08,,MEA-12,5,understand
+MEA-14,MEA,14,"Finds the perimeter and area of rectangles and squares using formulas",M5-07,,MEA-11,5,apply
+DAT-01,DAT,1,"Extends simple patterns made of shapes or numbers",M1-09,,,,1,understand
+DAT-02,DAT,2,"Sorts objects into groups by a property and reads simple pictographs",M2-12,,DAT-01,2,understand
+DAT-03,DAT,3,"Reads and draws simple tables and pictographs and answers questions from them",M3-12,,DAT-02,3,apply
+DAT-04,DAT,4,"Reads and draws bar graphs and tables and answers questions from them",M4-12,,DAT-03,4,apply
+DAT-05,DAT,5,"Draws and reads bar graphs and tables and finds simple averages",M5-12,,DAT-04,5,analyse
+DAT-06,DAT,6,"Finds and describes number patterns and extends them",M5-13,,DAT-05,5,analyse

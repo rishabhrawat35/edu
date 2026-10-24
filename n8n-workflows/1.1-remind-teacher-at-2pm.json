@@ -1,0 +1,182 @@
+{
+  "updatedAt": "2026-10-24T12:34:13.283Z",
+  "createdAt": "2026-10-24T11:01:31.521Z",
+  "id": "Pc8Y7rPlA21Ru2fR",
+  "name": "1.1 Remind the teacher at 2 pm to call about today's class",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 14 * * 1-6"
+            }
+          ]
+        }
+      },
+      "name": "2 pm, Mon-Sat",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "156c0d74-2a0c-46d9-bc5c-0d8715ccf85f"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "n1",
+              "name": "teacher_sheet_id",
+              "type": "string",
+              "value": "1AIgwO8j8q54vOO9ExB1_wmCjnAigvnY1Pdds23mpP4Y"
+            },
+            {
+              "id": "n2",
+              "name": "teacher_email",
+              "type": "string",
+              "value": "rishabhrawat35@gmail.com"
+            },
+            {
+              "id": "n3",
+              "name": "call_link",
+              "type": "string",
+              "value": "https://elevenlabs.io/app/talk-to?agent_id=agent_3001m5psjmaee9ea0ng2db55xm0c"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "cc007550-ac3d-4206-94a9-dc7fb91a327a"
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $json.teacher_sheet_id + '/values/' + encodeURIComponent(\"'Plan'!A1:Z500\") }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {}
+      },
+      "name": "Sheet: read Plan",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "6ae8fa93-aea1-426a-aa26-cb86037b9fff"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Nudge only if nothing was reported today.\nconst c = $('Config').first().json;\nconst values = $json.values || [];\nconst k = (values[0] || []).findIndex(x => String(x).trim() === 'Reported on');\nconst today = new Date().toISOString().slice(0, 10);\nif (k >= 0 && values.slice(1).some(r => String(r[k] || '').startsWith(today))) return [];\nconst body = ['Hi,', '', 'How did maths go today? Tell us in a 3-minute call:', c.call_link, '', 'Your plan: https://docs.google.com/spreadsheets/d/' + c.teacher_sheet_id + '/edit', '', 'Thanks,', 'Your maths helper'].join('\\n');\nconst raw = ['To: ' + c.teacher_email, 'Subject: How did maths go today?', 'Content-Type: text/plain; charset=UTF-8', '', body].join('\\r\\n');\nreturn [{ json: { raw: Buffer.from(raw).toString('base64').replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '') } }];"
+      },
+      "name": "Called today?",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        0
+      ],
+      "id": "9cd604f1-edb9-454c-8170-671cca692022"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ raw: $json.raw }) }}",
+        "options": {}
+      },
+      "name": "Gmail: send nudge",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        0
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "6367f4e2-3d6f-4b1c-8f38-7b9d26464d8e"
+    }
+  ],
+  "connections": {
+    "2 pm, Mon-Sat": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Sheet: read Plan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheet: read Plan": {
+      "main": [
+        [
+          {
+            "node": "Called today?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Called today?": {
+      "main": [
+        [
+          {
+            "node": "Gmail: send nudge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Kolkata"
+  },
+  "nodeGroups": [],
+  "activeVersionId": null,
+  "versionCounter": 4,
+  "sourceWorkflowId": null,
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

@@ -1,0 +1,301 @@
+plan_id,batch,strand_id,week_no,target_level_ids,objective
+W01-1-NUM,1,NUM,1,NUM-01,Most children can: counts objects up to 20 and says how many there are
+W02-1-NUM,1,NUM,2,NUM-01,Most children can: counts objects up to 20 and says how many there are
+W03-1-NUM,1,NUM,3,NUM-01,Most children can: counts objects up to 20 and says how many there are
+W04-1-NUM,1,NUM,4,NUM-01;NUM-02,Most children can: counts objects up to 20 and says how many there are
+W05-1-NUM,1,NUM,5,NUM-01,Review week: children revisit and practise skills from NUM-01 to NUM-01
+W06-1-NUM,1,NUM,6,NUM-02,Most children can: reads and writes numerals up to 99 and knows tens and ones
+W07-1-NUM,1,NUM,7,NUM-02,Most children can: reads and writes numerals up to 99 and knows tens and ones
+W08-1-NUM,1,NUM,8,NUM-02,Most children can: reads and writes numerals up to 99 and knows tens and ones
+W09-1-NUM,1,NUM,9,NUM-02;NUM-03,Most children can: reads and writes numerals up to 99 and knows tens and ones
+W10-1-NUM,1,NUM,10,NUM-01;NUM-02,Review week: children revisit and practise skills from NUM-01 to NUM-02
+W11-1-NUM,1,NUM,11,NUM-03,Most children can: compares and orders numbers up to 99
+W12-1-NUM,1,NUM,12,NUM-03,Most children can: compares and orders numbers up to 99
+W13-1-NUM,1,NUM,13,NUM-03,Most children can: compares and orders numbers up to 99
+W14-1-NUM,1,NUM,14,NUM-03;NUM-04,Most children can: compares and orders numbers up to 99
+W15-1-NUM,1,NUM,15,NUM-01;NUM-02;NUM-03,Review week: children revisit and practise skills from NUM-01 to NUM-03
+W16-1-NUM,1,NUM,16,NUM-04,"Most children can: reads, writes and compares numbers up to 999 using place value"
+W17-1-NUM,1,NUM,17,NUM-04,"Most children can: reads, writes and compares numbers up to 999 using place value"
+W18-1-NUM,1,NUM,18,NUM-04,"Most children can: reads, writes and compares numbers up to 999 using place value"
+W19-1-NUM,1,NUM,19,NUM-04;NUM-05,"Most children can: reads, writes and compares numbers up to 999 using place value"
+W20-1-NUM,1,NUM,20,NUM-02;NUM-03;NUM-04,Review week: children revisit and practise skills from NUM-02 to NUM-04
+W21-1-NUM,1,NUM,21,NUM-05,"Most children can: counts forward and backward in jumps of 2, 5 and 10"
+W22-1-NUM,1,NUM,22,NUM-05,"Most children can: counts forward and backward in jumps of 2, 5 and 10"
+W23-1-NUM,1,NUM,23,NUM-05,"Most children can: counts forward and backward in jumps of 2, 5 and 10"
+W24-1-NUM,1,NUM,24,NUM-05;NUM-06,"Most children can: counts forward and backward in jumps of 2, 5 and 10"
+W25-1-NUM,1,NUM,25,NUM-03;NUM-04;NUM-05,Review week: children revisit and practise skills from NUM-03 to NUM-05
+W26-1-NUM,1,NUM,26,NUM-06,"Most children can: reads, writes and compares numbers up to 9999 using place value"
+W27-1-NUM,1,NUM,27,NUM-06,"Most children can: reads, writes and compares numbers up to 9999 using place value"
+W28-1-NUM,1,NUM,28,NUM-06,"Most children can: reads, writes and compares numbers up to 9999 using place value"
+W29-1-NUM,1,NUM,29,NUM-06,"Most children can: reads, writes and compares numbers up to 9999 using place value"
+W30-1-NUM,1,NUM,30,NUM-04;NUM-05;NUM-06,Review week: children revisit and practise skills from NUM-04 to NUM-06
+W01-2-NUM,2,NUM,1,NUM-07,"Most children can: reads, writes and compares numbers up to five or six digits"
+W02-2-NUM,2,NUM,2,NUM-07,"Most children can: reads, writes and compares numbers up to five or six digits"
+W03-2-NUM,2,NUM,3,NUM-07,"Most children can: reads, writes and compares numbers up to five or six digits"
+W04-2-NUM,2,NUM,4,NUM-07,"Most children can: reads, writes and compares numbers up to five or six digits"
+W05-2-NUM,2,NUM,5,NUM-07,Review week: children revisit and practise skills from NUM-07 to NUM-07
+W06-2-NUM,2,NUM,6,NUM-07,"Most children can: reads, writes and compares numbers up to five or six digits"
+W07-2-NUM,2,NUM,7,NUM-07,"Most children can: reads, writes and compares numbers up to five or six digits"
+W08-2-NUM,2,NUM,8,NUM-07,"Most children can: reads, writes and compares numbers up to five or six digits"
+W09-2-NUM,2,NUM,9,NUM-07;NUM-08,"Most children can: reads, writes and compares numbers up to five or six digits"
+W10-2-NUM,2,NUM,10,NUM-07,Review week: children revisit and practise skills from NUM-07 to NUM-07
+W11-2-NUM,2,NUM,11,NUM-08,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W12-2-NUM,2,NUM,12,NUM-08,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W13-2-NUM,2,NUM,13,NUM-08,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W14-2-NUM,2,NUM,14,NUM-08,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W15-2-NUM,2,NUM,15,NUM-07,Review week: children revisit and practise skills from NUM-07 to NUM-07
+W16-2-NUM,2,NUM,16,NUM-08,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W17-2-NUM,2,NUM,17,NUM-08,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W18-2-NUM,2,NUM,18,NUM-08,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W19-2-NUM,2,NUM,19,NUM-08;NUM-09,"Most children can: reads, writes and compares large numbers (lakhs and crores)"
+W20-2-NUM,2,NUM,20,NUM-07;NUM-08,Review week: children revisit and practise skills from NUM-07 to NUM-08
+W21-2-NUM,2,NUM,21,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W22-2-NUM,2,NUM,22,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W23-2-NUM,2,NUM,23,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W24-2-NUM,2,NUM,24,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W25-2-NUM,2,NUM,25,NUM-07;NUM-08,Review week: children revisit and practise skills from NUM-07 to NUM-08
+W26-2-NUM,2,NUM,26,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W27-2-NUM,2,NUM,27,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W28-2-NUM,2,NUM,28,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W29-2-NUM,2,NUM,29,NUM-09,"Most children can: finds factors, multiples and uses simple divisibility tests"
+W30-2-NUM,2,NUM,30,NUM-07;NUM-08;NUM-09,Review week: children revisit and practise skills from NUM-07 to NUM-09
+W01-1-OPS,1,OPS,1,OPS-01,Most children can: adds and subtracts numbers up to 20 using objects or pictures
+W02-1-OPS,1,OPS,2,OPS-01,Most children can: adds and subtracts numbers up to 20 using objects or pictures
+W03-1-OPS,1,OPS,3,OPS-02,Most children can: solves simple everyday addition and subtraction word problems with small numbers
+W04-1-OPS,1,OPS,4,OPS-02,Most children can: solves simple everyday addition and subtraction word problems with small numbers
+W05-1-OPS,1,OPS,5,OPS-03,Most children can: adds and subtracts two-digit numbers with and without carrying or borrowing
+W06-1-OPS,1,OPS,6,OPS-03,Most children can: adds and subtracts two-digit numbers with and without carrying or borrowing
+W07-1-OPS,1,OPS,7,OPS-04,Most children can: solves everyday word problems using addition and subtraction of two-digit number
+W08-1-OPS,1,OPS,8,OPS-04,Most children can: solves everyday word problems using addition and subtraction of two-digit number
+W09-1-OPS,1,OPS,9,OPS-05,"Most children can: understands multiplication as repeated addition and uses tables of 2, 3, 4, 5 an"
+W10-1-OPS,1,OPS,10,OPS-05,"Most children can: understands multiplication as repeated addition and uses tables of 2, 3, 4, 5 an"
+W11-1-OPS,1,OPS,11,"OPS-04,OPS-05",Review week: revisit OPS-04 and OPS-05
+W12-1-OPS,1,OPS,12,OPS-06,Most children can: shares objects equally into groups and understands basic division
+W13-1-OPS,1,OPS,13,OPS-06,Most children can: shares objects equally into groups and understands basic division
+W14-1-OPS,1,OPS,14,OPS-07,Most children can: identifies half and quarter of a whole object or collection
+W15-1-OPS,1,OPS,15,OPS-07,Most children can: identifies half and quarter of a whole object or collection
+W16-1-OPS,1,OPS,16,"OPS-06,OPS-07",Review week: revisit OPS-06 and OPS-07
+W17-1-OPS,1,OPS,17,OPS-08,Most children can: adds and subtracts three-digit numbers including with carrying and borrowing
+W18-1-OPS,1,OPS,18,OPS-08,Most children can: adds and subtracts three-digit numbers including with carrying and borrowing
+W19-1-OPS,1,OPS,19,OPS-09,Most children can: multiplies a two-digit number by a one-digit number and knows tables up to 10
+W20-1-OPS,1,OPS,20,OPS-09,Most children can: multiplies a two-digit number by a one-digit number and knows tables up to 10
+W21-1-OPS,1,OPS,21,"OPS-08,OPS-09",Review week: revisit OPS-08 and OPS-09
+W22-1-OPS,1,OPS,22,OPS-10,Most children can: divides a number by a one-digit number and links division to multiplication
+W23-1-OPS,1,OPS,23,OPS-10,Most children can: divides a number by a one-digit number and links division to multiplication
+W24-1-OPS,1,OPS,24,OPS-11,Most children can: solves everyday word problems using all four operations
+W25-1-OPS,1,OPS,25,OPS-11,Most children can: solves everyday word problems using all four operations
+W26-1-OPS,1,OPS,26,"OPS-10,OPS-11",Review week: revisit OPS-10 and OPS-11
+W27-1-OPS,1,OPS,27,OPS-12,"Most children can: understands fractions (half, one-third, one-fourth) and compares simple fraction"
+W28-1-OPS,1,OPS,28,OPS-12,"Most children can: understands fractions (half, one-third, one-fourth) and compares simple fraction"
+W29-1-OPS,1,OPS,29,"OPS-11,OPS-12",Review week: revisit OPS-11 and OPS-12
+W30-1-OPS,1,OPS,30,"OPS-01,OPS-12",Review week: revisit OPS-01 and OPS-12
+W01-2-OPS,2,OPS,1,OPS-13,Most children can: multiplies and divides multi-digit numbers by one-digit and two-digit numbers
+W02-2-OPS,2,OPS,2,OPS-13,Most children can: multiplies and divides multi-digit numbers by one-digit and two-digit numbers
+W03-2-OPS,2,OPS,3,OPS-13,Most children can: multiplies and divides multi-digit numbers by one-digit and two-digit numbers
+W04-2-OPS,2,OPS,4,OPS-14,Most children can: solves multi-step everyday problems using the four operations
+W05-2-OPS,2,OPS,5,OPS-14,Most children can: solves multi-step everyday problems using the four operations
+W06-2-OPS,2,OPS,6,OPS-14,Most children can: solves multi-step everyday problems using the four operations
+W07-2-OPS,2,OPS,7,OPS-15,Most children can: understands equivalent fractions and adds and subtracts fractions with the same 
+W08-2-OPS,2,OPS,8,OPS-15,Most children can: understands equivalent fractions and adds and subtracts fractions with the same 
+W09-2-OPS,2,OPS,9,OPS-15,Most children can: understands equivalent fractions and adds and subtracts fractions with the same 
+W10-2-OPS,2,OPS,10,OPS-16,Most children can: uses decimal notation for money and lengths (metres and centimetres)
+W11-2-OPS,2,OPS,11,OPS-16,Most children can: uses decimal notation for money and lengths (metres and centimetres)
+W12-2-OPS,2,OPS,12,OPS-16,Most children can: uses decimal notation for money and lengths (metres and centimetres)
+W13-2-OPS,2,OPS,13,OPS-17,Most children can: does the four operations on large numbers and estimates answers
+W14-2-OPS,2,OPS,14,OPS-17,Most children can: does the four operations on large numbers and estimates answers
+W15-2-OPS,2,OPS,15,OPS-17,Most children can: does the four operations on large numbers and estimates answers
+W16-2-OPS,2,OPS,16,"OPS-16,OPS-17",Review week: revisit OPS-16 and OPS-17
+W17-2-OPS,2,OPS,17,OPS-18,"Most children can: adds, subtracts and compares fractions with like and unlike denominators"
+W18-2-OPS,2,OPS,18,OPS-18,"Most children can: adds, subtracts and compares fractions with like and unlike denominators"
+W19-2-OPS,2,OPS,19,OPS-18,"Most children can: adds, subtracts and compares fractions with like and unlike denominators"
+W20-2-OPS,2,OPS,20,OPS-19,"Most children can: reads, writes, compares and adds decimals; converts between simple fractions and"
+W21-2-OPS,2,OPS,21,OPS-19,"Most children can: reads, writes, compares and adds decimals; converts between simple fractions and"
+W22-2-OPS,2,OPS,22,OPS-20,"Most children can: solves everyday problems using the four operations, fractions and decimals"
+W23-2-OPS,2,OPS,23,OPS-20,"Most children can: solves everyday problems using the four operations, fractions and decimals"
+W24-2-OPS,2,OPS,24,OPS-21,Most children can: uses simple ratio or unitary-method thinking in everyday situations
+W25-2-OPS,2,OPS,25,OPS-21,Most children can: uses simple ratio or unitary-method thinking in everyday situations
+W26-2-OPS,2,OPS,26,"OPS-20,OPS-21",Review week: revisit OPS-20 and OPS-21
+W27-2-OPS,2,OPS,27,OPS-21,Most children can: uses simple ratio or unitary-method thinking in everyday situations
+W28-2-OPS,2,OPS,28,OPS-21,Most children can: uses simple ratio or unitary-method thinking in everyday situations
+W29-2-OPS,2,OPS,29,OPS-21,Most children can: uses simple ratio or unitary-method thinking in everyday situations
+W30-2-OPS,2,OPS,30,"OPS-13,OPS-21",Review week: revisit OPS-13 and OPS-21
+W01-1-GEO,1,GEO,1,GEO-01,Most children can: names and describes basic 2-d and 3-d shapes
+W02-1-GEO,1,GEO,2,GEO-01,Most children can: names and describes basic 2-d and 3-d shapes
+W03-1-GEO,1,GEO,3,GEO-01,Most children can: names and describes basic 2-d and 3-d shapes
+W04-1-GEO,1,GEO,4,GEO-01,Most children can: names and describes basic 2-d and 3-d shapes
+W05-1-GEO,1,GEO,5,GEO-01,Review week: children revisit and practise skills from GEO-01 to GEO-01
+W06-1-GEO,1,GEO,6,GEO-01,Most children can: names and describes basic 2-d and 3-d shapes
+W07-1-GEO,1,GEO,7,GEO-01,Most children can: names and describes basic 2-d and 3-d shapes
+W08-1-GEO,1,GEO,8,GEO-01,Most children can: names and describes basic 2-d and 3-d shapes
+W09-1-GEO,1,GEO,9,GEO-01;GEO-02,Most children can: names and describes basic 2-d and 3-d shapes
+W10-1-GEO,1,GEO,10,GEO-01,Review week: children revisit and practise skills from GEO-01 to GEO-01
+W11-1-GEO,1,GEO,11,GEO-02,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W12-1-GEO,1,GEO,12,GEO-02,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W13-1-GEO,1,GEO,13,GEO-02,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W14-1-GEO,1,GEO,14,GEO-02,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W15-1-GEO,1,GEO,15,GEO-01,Review week: children revisit and practise skills from GEO-01 to GEO-01
+W16-1-GEO,1,GEO,16,GEO-02,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W17-1-GEO,1,GEO,17,GEO-02,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W18-1-GEO,1,GEO,18,GEO-02,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W19-1-GEO,1,GEO,19,GEO-02;GEO-03,"Most children can: sorts shapes by properties and identifies faces, corners, lines"
+W20-1-GEO,1,GEO,20,GEO-01;GEO-02,Review week: children revisit and practise skills from GEO-01 to GEO-02
+W21-1-GEO,1,GEO,21,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W22-1-GEO,1,GEO,22,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W23-1-GEO,1,GEO,23,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W24-1-GEO,1,GEO,24,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W25-1-GEO,1,GEO,25,GEO-01;GEO-02,Review week: children revisit and practise skills from GEO-01 to GEO-02
+W26-1-GEO,1,GEO,26,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W27-1-GEO,1,GEO,27,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W28-1-GEO,1,GEO,28,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W29-1-GEO,1,GEO,29,GEO-03,Most children can: describes 2-d and 3-d shapes in detail and finds lines of symmetry
+W30-1-GEO,1,GEO,30,GEO-01;GEO-02;GEO-03,Review week: children revisit and practise skills from GEO-01 to GEO-03
+W01-2-GEO,2,GEO,1,GEO-04,"Most children can: identifies angles, lines and faces/edges of 3-d shapes; uses grids"
+W02-2-GEO,2,GEO,2,GEO-04,"Most children can: identifies angles, lines and faces/edges of 3-d shapes; uses grids"
+W03-2-GEO,2,GEO,3,GEO-04,"Most children can: identifies angles, lines and faces/edges of 3-d shapes; uses grids"
+W04-2-GEO,2,GEO,4,GEO-04,"Most children can: identifies angles, lines and faces/edges of 3-d shapes; uses grids"
+W05-2-GEO,2,GEO,5,GEO-04,Review week: children revisit and practise skills from GEO-04 to GEO-04
+W06-2-GEO,2,GEO,6,GEO-04,"Most children can: identifies angles, lines and faces/edges of 3-d shapes; uses grids"
+W07-2-GEO,2,GEO,7,GEO-04;GEO-05,"Most children can: identifies angles, lines and faces/edges of 3-d shapes; uses grids"
+W08-2-GEO,2,GEO,8,GEO-05,Most children can: finds symmetry in shapes and extends patterns
+W09-2-GEO,2,GEO,9,GEO-05,Most children can: finds symmetry in shapes and extends patterns
+W10-2-GEO,2,GEO,10,GEO-04,Review week: children revisit and practise skills from GEO-04 to GEO-04
+W11-2-GEO,2,GEO,11,GEO-05,Most children can: finds symmetry in shapes and extends patterns
+W12-2-GEO,2,GEO,12,GEO-05,Most children can: finds symmetry in shapes and extends patterns
+W13-2-GEO,2,GEO,13,GEO-05,Most children can: finds symmetry in shapes and extends patterns
+W14-2-GEO,2,GEO,14,GEO-05;GEO-06,Most children can: finds symmetry in shapes and extends patterns
+W15-2-GEO,2,GEO,15,GEO-04;GEO-05,Review week: children revisit and practise skills from GEO-04 to GEO-05
+W16-2-GEO,2,GEO,16,GEO-06,Most children can: identifies and measures angles and describes shape properties
+W17-2-GEO,2,GEO,17,GEO-06,Most children can: identifies and measures angles and describes shape properties
+W18-2-GEO,2,GEO,18,GEO-06,Most children can: identifies and measures angles and describes shape properties
+W19-2-GEO,2,GEO,19,GEO-06,Most children can: identifies and measures angles and describes shape properties
+W20-2-GEO,2,GEO,20,GEO-04;GEO-05,Review week: children revisit and practise skills from GEO-04 to GEO-05
+W21-2-GEO,2,GEO,21,GEO-06,Most children can: identifies and measures angles and describes shape properties
+W22-2-GEO,2,GEO,22,GEO-06;GEO-07,Most children can: identifies and measures angles and describes shape properties
+W23-2-GEO,2,GEO,23,GEO-07,"Most children can: finds and uses symmetry, tiling and reflection in designs"
+W24-2-GEO,2,GEO,24,GEO-07,"Most children can: finds and uses symmetry, tiling and reflection in designs"
+W25-2-GEO,2,GEO,25,GEO-04;GEO-05;GEO-06,Review week: children revisit and practise skills from GEO-04 to GEO-06
+W26-2-GEO,2,GEO,26,GEO-07,"Most children can: finds and uses symmetry, tiling and reflection in designs"
+W27-2-GEO,2,GEO,27,GEO-07,"Most children can: finds and uses symmetry, tiling and reflection in designs"
+W28-2-GEO,2,GEO,28,GEO-07,"Most children can: finds and uses symmetry, tiling and reflection in designs"
+W29-2-GEO,2,GEO,29,GEO-07,"Most children can: finds and uses symmetry, tiling and reflection in designs"
+W30-2-GEO,2,GEO,30,GEO-05;GEO-06;GEO-07,Review week: children revisit and practise skills from GEO-05 to GEO-07
+W01-1-MEA,1,MEA,1,MEA-01,"Most children can: compares objects by length, weight or capacity using everyday words"
+W02-1-MEA,1,MEA,2,MEA-01,"Most children can: compares objects by length, weight or capacity using everyday words"
+W03-1-MEA,1,MEA,3,MEA-01;MEA-02,"Most children can: compares objects by length, weight or capacity using everyday words"
+W04-1-MEA,1,MEA,4,MEA-02,"Most children can: names days of the week, sorts events by time"
+W05-1-MEA,1,MEA,5,MEA-01,Review week: children revisit and practise skills from MEA-01 to MEA-01
+W06-1-MEA,1,MEA,6,MEA-02,"Most children can: names days of the week, sorts events by time"
+W07-1-MEA,1,MEA,7,MEA-02;MEA-03,"Most children can: names days of the week, sorts events by time"
+W08-1-MEA,1,MEA,8,MEA-03,Most children can: recognises coins and notes and does simple money sums
+W09-1-MEA,1,MEA,9,MEA-03,Most children can: recognises coins and notes and does simple money sums
+W10-1-MEA,1,MEA,10,MEA-01;MEA-02,Review week: children revisit and practise skills from MEA-01 to MEA-02
+W11-1-MEA,1,MEA,11,MEA-03;MEA-04,Most children can: recognises coins and notes and does simple money sums
+W12-1-MEA,1,MEA,12,MEA-04,"Most children can: measures length, weight and capacity using standard units"
+W13-1-MEA,1,MEA,13,MEA-04,"Most children can: measures length, weight and capacity using standard units"
+W14-1-MEA,1,MEA,14,MEA-04;MEA-05,"Most children can: measures length, weight and capacity using standard units"
+W15-1-MEA,1,MEA,15,MEA-02;MEA-03;MEA-04,Review week: children revisit and practise skills from MEA-02 to MEA-04
+W16-1-MEA,1,MEA,16,MEA-05,Most children can: reads time to the hour and half hour
+W17-1-MEA,1,MEA,17,MEA-05,Most children can: reads time to the hour and half hour
+W18-1-MEA,1,MEA,18,MEA-05;MEA-06,Most children can: reads time to the hour and half hour
+W19-1-MEA,1,MEA,19,MEA-06,Most children can: measures and estimates; converts between units
+W20-1-MEA,1,MEA,20,MEA-03;MEA-04;MEA-05,Review week: children revisit and practise skills from MEA-03 to MEA-05
+W21-1-MEA,1,MEA,21,MEA-06,Most children can: measures and estimates; converts between units
+W22-1-MEA,1,MEA,22,MEA-06;MEA-07,Most children can: measures and estimates; converts between units
+W23-1-MEA,1,MEA,23,MEA-07,Most children can: reads time in hours and minutes; finds durations
+W24-1-MEA,1,MEA,24,MEA-07,Most children can: reads time in hours and minutes; finds durations
+W25-1-MEA,1,MEA,25,MEA-04;MEA-05;MEA-06,Review week: children revisit and practise skills from MEA-04 to MEA-06
+W26-1-MEA,1,MEA,26,MEA-07;MEA-08,Most children can: reads time in hours and minutes; finds durations
+W27-1-MEA,1,MEA,27,MEA-08,Most children can: works with money including bills and change
+W28-1-MEA,1,MEA,28,MEA-08,Most children can: works with money including bills and change
+W29-1-MEA,1,MEA,29,MEA-08,Most children can: works with money including bills and change
+W30-1-MEA,1,MEA,30,MEA-06;MEA-07;MEA-08,Review week: children revisit and practise skills from MEA-06 to MEA-08
+W01-2-MEA,2,MEA,1,MEA-09,"Most children can: measures and converts units of length, weight and capacity"
+W02-2-MEA,2,MEA,2,MEA-09,"Most children can: measures and converts units of length, weight and capacity"
+W03-2-MEA,2,MEA,3,MEA-09,"Most children can: measures and converts units of length, weight and capacity"
+W04-2-MEA,2,MEA,4,MEA-09;MEA-10,"Most children can: measures and converts units of length, weight and capacity"
+W05-2-MEA,2,MEA,5,MEA-09,Review week: children revisit and practise skills from MEA-09 to MEA-09
+W06-2-MEA,2,MEA,6,MEA-10,Most children can: reads 12-hour and 24-hour clocks and works out durations
+W07-2-MEA,2,MEA,7,MEA-10,Most children can: reads 12-hour and 24-hour clocks and works out durations
+W08-2-MEA,2,MEA,8,MEA-10,Most children can: reads 12-hour and 24-hour clocks and works out durations
+W09-2-MEA,2,MEA,9,MEA-10;MEA-11,Most children can: reads 12-hour and 24-hour clocks and works out durations
+W10-2-MEA,2,MEA,10,MEA-09;MEA-10,Review week: children revisit and practise skills from MEA-09 to MEA-10
+W11-2-MEA,2,MEA,11,MEA-11,Most children can: finds perimeter and area by counting squares
+W12-2-MEA,2,MEA,12,MEA-11,Most children can: finds perimeter and area by counting squares
+W13-2-MEA,2,MEA,13,MEA-11,Most children can: finds perimeter and area by counting squares
+W14-2-MEA,2,MEA,14,MEA-11;MEA-12,Most children can: finds perimeter and area by counting squares
+W15-2-MEA,2,MEA,15,MEA-09;MEA-10;MEA-11,Review week: children revisit and practise skills from MEA-09 to MEA-11
+W16-2-MEA,2,MEA,16,MEA-12,Most children can: converts units across all standard units
+W17-2-MEA,2,MEA,17,MEA-12,Most children can: converts units across all standard units
+W18-2-MEA,2,MEA,18,MEA-12,Most children can: converts units across all standard units
+W19-2-MEA,2,MEA,19,MEA-12;MEA-13,Most children can: converts units across all standard units
+W20-2-MEA,2,MEA,20,MEA-10;MEA-11;MEA-12,Review week: children revisit and practise skills from MEA-10 to MEA-12
+W21-2-MEA,2,MEA,21,MEA-13,Most children can: understands volume and capacity with standard units
+W22-2-MEA,2,MEA,22,MEA-13,Most children can: understands volume and capacity with standard units
+W23-2-MEA,2,MEA,23,MEA-13,Most children can: understands volume and capacity with standard units
+W24-2-MEA,2,MEA,24,MEA-13;MEA-14,Most children can: understands volume and capacity with standard units
+W25-2-MEA,2,MEA,25,MEA-11;MEA-12;MEA-13,Review week: children revisit and practise skills from MEA-11 to MEA-13
+W26-2-MEA,2,MEA,26,MEA-14,Most children can: finds perimeter and area of rectangles using formulas
+W27-2-MEA,2,MEA,27,MEA-14,Most children can: finds perimeter and area of rectangles using formulas
+W28-2-MEA,2,MEA,28,MEA-14,Most children can: finds perimeter and area of rectangles using formulas
+W29-2-MEA,2,MEA,29,MEA-14,Most children can: finds perimeter and area of rectangles using formulas
+W30-2-MEA,2,MEA,30,MEA-12;MEA-13;MEA-14,Review week: children revisit and practise skills from MEA-12 to MEA-14
+W01-1-DAT,1,DAT,1,DAT-01,Most children can: extends simple patterns made of shapes or numbers
+W02-1-DAT,1,DAT,2,DAT-01,Most children can: extends simple patterns made of shapes or numbers
+W03-1-DAT,1,DAT,3,DAT-01,Most children can: extends simple patterns made of shapes or numbers
+W04-1-DAT,1,DAT,4,DAT-01,Most children can: extends simple patterns made of shapes or numbers
+W05-1-DAT,1,DAT,5,DAT-01,Review week: children revisit and practise skills from DAT-01 to DAT-01
+W06-1-DAT,1,DAT,6,DAT-01,Most children can: extends simple patterns made of shapes or numbers
+W07-1-DAT,1,DAT,7,DAT-01,Most children can: extends simple patterns made of shapes or numbers
+W08-1-DAT,1,DAT,8,DAT-01,Most children can: extends simple patterns made of shapes or numbers
+W09-1-DAT,1,DAT,9,DAT-01;DAT-02,Most children can: extends simple patterns made of shapes or numbers
+W10-1-DAT,1,DAT,10,DAT-01,Review week: children revisit and practise skills from DAT-01 to DAT-01
+W11-1-DAT,1,DAT,11,DAT-02,Most children can: sorts objects into groups and reads simple pictographs
+W12-1-DAT,1,DAT,12,DAT-02,Most children can: sorts objects into groups and reads simple pictographs
+W13-1-DAT,1,DAT,13,DAT-02,Most children can: sorts objects into groups and reads simple pictographs
+W14-1-DAT,1,DAT,14,DAT-02,Most children can: sorts objects into groups and reads simple pictographs
+W15-1-DAT,1,DAT,15,DAT-01,Review week: children revisit and practise skills from DAT-01 to DAT-01
+W16-1-DAT,1,DAT,16,DAT-02,Most children can: sorts objects into groups and reads simple pictographs
+W17-1-DAT,1,DAT,17,DAT-02,Most children can: sorts objects into groups and reads simple pictographs
+W18-1-DAT,1,DAT,18,DAT-02,Most children can: sorts objects into groups and reads simple pictographs
+W19-1-DAT,1,DAT,19,DAT-02;DAT-03,Most children can: sorts objects into groups and reads simple pictographs
+W20-1-DAT,1,DAT,20,DAT-01;DAT-02,Review week: children revisit and practise skills from DAT-01 to DAT-02
+W21-1-DAT,1,DAT,21,DAT-03,Most children can: reads and draws simple tables and pictographs
+W22-1-DAT,1,DAT,22,DAT-03,Most children can: reads and draws simple tables and pictographs
+W23-1-DAT,1,DAT,23,DAT-03,Most children can: reads and draws simple tables and pictographs
+W24-1-DAT,1,DAT,24,DAT-03,Most children can: reads and draws simple tables and pictographs
+W25-1-DAT,1,DAT,25,DAT-01;DAT-02,Review week: children revisit and practise skills from DAT-01 to DAT-02
+W26-1-DAT,1,DAT,26,DAT-03,Most children can: reads and draws simple tables and pictographs
+W27-1-DAT,1,DAT,27,DAT-03,Most children can: reads and draws simple tables and pictographs
+W28-1-DAT,1,DAT,28,DAT-03,Most children can: reads and draws simple tables and pictographs
+W29-1-DAT,1,DAT,29,DAT-03,Most children can: reads and draws simple tables and pictographs
+W30-1-DAT,1,DAT,30,DAT-01;DAT-02;DAT-03,Review week: children revisit and practise skills from DAT-01 to DAT-03
+W01-2-DAT,2,DAT,1,DAT-04,Most children can: reads and draws bar graphs and tables
+W02-2-DAT,2,DAT,2,DAT-04,Most children can: reads and draws bar graphs and tables
+W03-2-DAT,2,DAT,3,DAT-04,Most children can: reads and draws bar graphs and tables
+W04-2-DAT,2,DAT,4,DAT-04,Most children can: reads and draws bar graphs and tables
+W05-2-DAT,2,DAT,5,DAT-04,Review week: children revisit and practise skills from DAT-04 to DAT-04
+W06-2-DAT,2,DAT,6,DAT-04,Most children can: reads and draws bar graphs and tables
+W07-2-DAT,2,DAT,7,DAT-04,Most children can: reads and draws bar graphs and tables
+W08-2-DAT,2,DAT,8,DAT-04,Most children can: reads and draws bar graphs and tables
+W09-2-DAT,2,DAT,9,DAT-04;DAT-05,Most children can: reads and draws bar graphs and tables
+W10-2-DAT,2,DAT,10,DAT-04,Review week: children revisit and practise skills from DAT-04 to DAT-04
+W11-2-DAT,2,DAT,11,DAT-05,Most children can: draws and reads bar graphs and finds simple averages
+W12-2-DAT,2,DAT,12,DAT-05,Most children can: draws and reads bar graphs and finds simple averages
+W13-2-DAT,2,DAT,13,DAT-05,Most children can: draws and reads bar graphs and finds simple averages
+W14-2-DAT,2,DAT,14,DAT-05,Most children can: draws and reads bar graphs and finds simple averages
+W15-2-DAT,2,DAT,15,DAT-04,Review week: children revisit and practise skills from DAT-04 to DAT-04
+W16-2-DAT,2,DAT,16,DAT-05,Most children can: draws and reads bar graphs and finds simple averages
+W17-2-DAT,2,DAT,17,DAT-05,Most children can: draws and reads bar graphs and finds simple averages
+W18-2-DAT,2,DAT,18,DAT-05,Most children can: draws and reads bar graphs and finds simple averages
+W19-2-DAT,2,DAT,19,DAT-05;DAT-06,Most children can: draws and reads bar graphs and finds simple averages
+W20-2-DAT,2,DAT,20,DAT-04;DAT-05,Review week: children revisit and practise skills from DAT-04 to DAT-05
+W21-2-DAT,2,DAT,21,DAT-06,Most children can: finds and describes number patterns and extends them
+W22-2-DAT,2,DAT,22,DAT-06,Most children can: finds and describes number patterns and extends them
+W23-2-DAT,2,DAT,23,DAT-06,Most children can: finds and describes number patterns and extends them
+W24-2-DAT,2,DAT,24,DAT-06,Most children can: finds and describes number patterns and extends them
+W25-2-DAT,2,DAT,25,DAT-04;DAT-05,Review week: children revisit and practise skills from DAT-04 to DAT-05
+W26-2-DAT,2,DAT,26,DAT-06,Most children can: finds and describes number patterns and extends them
+W27-2-DAT,2,DAT,27,DAT-06,Most children can: finds and describes number patterns and extends them
+W28-2-DAT,2,DAT,28,DAT-06,Most children can: finds and describes number patterns and extends them
+W29-2-DAT,2,DAT,29,DAT-06,Most children can: finds and describes number patterns and extends them
+W30-2-DAT,2,DAT,30,DAT-04;DAT-05;DAT-06,Review week: children revisit and practise skills from DAT-04 to DAT-06

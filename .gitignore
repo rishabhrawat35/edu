@@ -1,0 +1,9 @@
+.env
+.venv/
+__pycache__/
+.DS_Store
+# local or stale build files
+drive-build/drive-build.tgz
+drive-build/ids.json
+drive-build/docids.json
+rishabhrawat-edu/maths-curriculum/_to_delete/

@@ -1,0 +1,83 @@
+# Example input: Indian primary school maths (grades 1-5)
+# This is the configuration that was used to build the maths curriculum
+# in the maths-curriculum/ folder. Use it as a reference when creating
+# inputs for other subjects.
+
+# --- Required fields ---
+
+subject_name: "Mathematics"
+subject_code: "MATH"
+grade_start: 1
+grade_end: 5
+output_language: "en"        # or "hi" for Hindi
+
+# Student groups — level-based, not grade-based.
+# Children are placed into groups by a starting check, not by their grade.
+groups:
+  - group_id: "A"
+    group_label: "Group A (Beginning)"
+    description: "Children at the start of the ladder; oral and hands-on work because most cannot read yet"
+    teaching_mode: "oral and hands-on"
+  - group_id: "B"
+    group_label: "Group B (Middle)"
+    description: "Children with basic skills building fluency; mix of oral, hands-on and written"
+    teaching_mode: "mixed"
+  - group_id: "C"
+    group_label: "Group C (Advanced)"
+    description: "Children at upper-primary level; more written and analytical tasks"
+    teaching_mode: "written and analytical"
+
+# --- Optional fields ---
+
+# Strand suggestions — if omitted, the textbook researcher proposes strands
+strand_suggestions:
+  - strand_id: "NUM"
+    name: "Number Sense"
+    description: "Counting, place value, number recognition, comparison"
+  - strand_id: "OPS"
+    name: "Operations"
+    description: "Addition, subtraction, multiplication, division"
+  - strand_id: "GEO"
+    name: "Geometry"
+    description: "Shapes, symmetry, spatial reasoning"
+  - strand_id: "MEA"
+    name: "Measurement"
+    description: "Length, weight, capacity, time, money"
+  - strand_id: "DAT"
+    name: "Data Handling"
+    description: "Tally marks, pictographs, bar graphs, tables"
+
+# Classroom model
+classroom_model: "MGML"      # Multi-Grade Multi-Level
+
+# What is in the classroom
+available_materials:
+  - blackboard
+  - chalk
+  - slates
+  - notebooks
+  - pencils
+  - stones
+  - sticks
+  - bottle caps
+  - rope
+  - measuring tape
+  - balance scale
+  - clock (analog)
+  - dice
+  - number cards (1-100)
+  - shape cutouts
+
+unavailable_materials:
+  - projector
+  - tablets
+  - computers
+  - printed worksheets (no photocopier)
+  - textbooks for every student (teacher has one copy)
+
+# Class logistics
+class_size_range: "20-40"
+period_minutes: 45           # 3 blocks of 15 min (one per group rotation)
+
+# Curriculum scope
+total_days: 150              # Day-numbered plans, not week-based

@@ -1,0 +1,16 @@
+{
+  "stages": {
+    "research": "complete",
+    "design": "complete",
+    "challenge": "complete",
+    "activities": "complete",
+    "plans": "complete",
+    "final_review": "complete",
+    "readme": "complete"
+  },
+  "model": "3-group (A/B/C level-based)",
+  "levels": 57,
+  "activities": 172,
+  "plan_days": 150,
+  "last_updated": "2026-10-24"
+}

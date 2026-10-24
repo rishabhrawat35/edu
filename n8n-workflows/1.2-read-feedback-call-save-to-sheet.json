@@ -1,0 +1,719 @@
+{
+  "updatedAt": "2026-10-24T12:34:13.378Z",
+  "createdAt": "2026-10-24T10:34:00.527Z",
+  "id": "idbN6jvrI65fow6h",
+  "name": "1.2 Read the feedback call and save it in the teacher sheet",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "name": "Every minute",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "1ffbc56b-98b9-4bc3-812d-7e3226960386"
+    },
+    {
+      "parameters": {},
+      "name": "Test now",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ],
+      "id": "8e5d42fd-1d06-4cd4-b6c1-dfb365ce3cf3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "k1",
+              "name": "elevenlabs_agent_id",
+              "type": "string",
+              "value": "agent_3001m5psjmaee9ea0ng2db55xm0c"
+            },
+            {
+              "id": "k2",
+              "name": "agenticorg_agent_id",
+              "type": "string",
+              "value": "5ff26e8e-8384-4ca9-bead-681542ace025"
+            },
+            {
+              "id": "k3",
+              "name": "teacher_sheet_id",
+              "type": "string",
+              "value": "1AIgwO8j8q54vOO9ExB1_wmCjnAigvnY1Pdds23mpP4Y"
+            },
+            {
+              "id": "k4",
+              "name": "teacher_email",
+              "type": "string",
+              "value": "rishabhrawat35@gmail.com"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        100
+      ],
+      "id": "31904017-2994-4240-bff0-05d0ea457586"
+    },
+    {
+      "parameters": {
+        "url": "https://api.elevenlabs.io/v1/convai/conversations",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "elevenLabsApi",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "agent_id",
+              "value": "={{ $json.elevenlabs_agent_id }}"
+            },
+            {
+              "name": "page_size",
+              "value": "20"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "ElevenLabs: list calls",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        100
+      ],
+      "credentials": {
+        "elevenLabsApi": {
+          "name": "ElevenLabs account"
+        }
+      },
+      "id": "6b57bd84-b056-4997-ac96-10bd565bfae6"
+    },
+    {
+      "parameters": {
+        "jsCode": "const seen = $getWorkflowStaticData('global');\nconst manual = $execution.mode === 'manual';\nconst calls = ($json.conversations || []).filter(c => c.status === 'done');\n// First scheduled run: remember existing calls without processing them.\nif (!manual && !seen.ids) { seen.ids = calls.map(c => c.conversation_id); return []; }\nseen.ids = seen.ids || [];\n// Manual test: the latest finished call. Scheduled: only calls not handled before.\nconst todo = manual ? calls.slice(0, 1) : calls.filter(c => !seen.ids.includes(c.conversation_id));\nif (!manual) seen.ids = [...todo.map(c => c.conversation_id), ...seen.ids].slice(0, 500);\nreturn todo.map(c => ({ json: { conversation_id: c.conversation_id } }));"
+      },
+      "name": "New finished calls",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        100
+      ],
+      "id": "93427f66-1914-4719-87a5-ea3d9bb9eb0a"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.elevenlabs.io/v1/convai/conversations/{{ $json.conversation_id }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "elevenLabsApi",
+        "options": {}
+      },
+      "name": "ElevenLabs: get call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        100
+      ],
+      "credentials": {
+        "elevenLabsApi": {
+          "name": "ElevenLabs account"
+        }
+      },
+      "id": "3e12aa0f-deb6-41f8-b50a-1cdf7fcca094"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const c = $json;\nconst transcript = (c.transcript || []).filter(t => t.message).map(t => (t.role === 'agent' ? 'Agent' : 'User') + ': ' + t.message).join('\\n');\nconst collected = Object.fromEntries(Object.entries(c.analysis?.data_collection_results || {}).map(([k, v]) => [k, v.value]));\nconst start = c.metadata?.start_time_unix_secs;\nreturn { json: {\n  conversation_id: c.conversation_id,\n  call_date: (start ? new Date(start * 1000) : new Date()).toISOString().slice(0, 10),\n  transcript, collected_data: collected, summary: c.analysis?.transcript_summary || null,\n} };"
+      },
+      "name": "Prepare call",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        100
+      ],
+      "id": "a2bfaf03-026d-4c21-b9fc-f8c45b130c64"
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Config').first().json.teacher_sheet_id + '?fields=sheets.properties(sheetId,title)' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {}
+      },
+      "name": "Sheet: info",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1320,
+        100
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "4afcee68-d60a-47fc-ab6a-230e0adee363"
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Config').first().json.teacher_sheet_id + '/values/' + encodeURIComponent(\"'\" + (($json.sheets.find(s => s.properties.title === 'Plan') || $json.sheets[0]).properties.title) + \"'!A1:Z500\") + '?valueRenderOption=FORMULA' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {}
+      },
+      "name": "Sheet: read rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        100
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "02da4566-64f8-40bf-9594-759da61773d9"
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://www.googleapis.com/drive/v3/files/' + $('Config').first().json.teacher_sheet_id + '?fields=parents' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {}
+      },
+      "name": "Drive: sheet folder",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        100
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "b7fdcbb0-8ae8-4077-bdea-ad88630ca5a8"
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://www.googleapis.com/drive/v3/files?fields=files(id,name)&q=' + encodeURIComponent(\"trashed=false and mimeType='application/vnd.google-apps.folder' and name='Updated plans' and '\" + $json.parents[0] + \"' in parents\") }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "options": {}
+      },
+      "name": "Drive: find Updated plans",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        100
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "6f5afd97-47ab-4569-8a1c-c56266f1de5d"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Turn the sheet into rows, and pick the rows near the day the teacher named.\nconst values = $('Sheet: read rows').item.json.values || [];\nconst headers = (values[0] || []).map(v => String(v).trim());\nconst H = name => headers.indexOf(name);\nconst linkOf = cell => (String(cell || '').match(/https?:\\/\\/[^\"\\s)]+/) || [])[0] || null;\nconst rows = values.slice(1).map((v, k) => ({\n  row_number: k + 2,\n  day: String(v[H('Day')] ?? '').trim(),\n  topic: String(v[H('Topic')] ?? '').trim(),\n  group_a: v[H('Group A today')] ?? '', group_b: v[H('Group B today')] ?? '', group_c: v[H('Group C today')] ?? '',\n  plan_cell: v[H('Plan')] ?? '', plan_url: linkOf(v[H('Plan')]),\n  original_cell: v[H('Original plan')] ?? '', completed: v[H('Completed')] ?? '',\n})).filter(r => r.day);\nconst said = String($('Prepare call').item.json.collected_data.day_number ?? '').replace(/[^0-9a-z]/gi, '');\nconst i = rows.findIndex(r => r.day === said);\nconst near = i < 0 ? rows.filter(r => !r.completed).slice(0, 6) : rows.slice(Math.max(0, i - 2), i + 3);\nconst tab = ($('Sheet: info').item.json.sheets.find(s => s.properties.title === 'Plan') || $('Sheet: info').item.json.sheets[0]).properties;\nconst folder = ($('Drive: find Updated plans').item.json.files || [])[0];\nreturn { json: { headers, rows, plan_rows: near.map(({ row_number, plan_cell, original_cell, ...r }) => r),\n  sheet_title: tab.title, sheet_gid: tab.sheetId, updated_folder_id: folder ? folder.id : null } };"
+      },
+      "name": "Match rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2200,
+        100
+      ],
+      "id": "3be20757-2da4-4fb0-8157-8ff666e89131"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://agenticorg.hackathon.pinelabs.com/api/v1/agents/' + $('Config').first().json.agenticorg_agent_id + '/run' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ action: 'process', inputs: { transcript: $('Prepare call').item.json.transcript, collected_data: $('Prepare call').item.json.collected_data, summary: $('Prepare call').item.json.summary, plan_rows: $json.plan_rows, call_date: $('Prepare call').item.json.call_date }, context: { channel: 'elevenlabs_voice', conversation_id: $('Prepare call').item.json.conversation_id } }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "name": "AgenticOrg: structure feedback",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2420,
+        220
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "AgenticOrg API key"
+        }
+      },
+      "id": "07b5e3c0-0906-4441-b892-ec67a9804409"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const m = $('Match rows').item.json; const p = $json;\nif (!p.row_number) return { json: { body: { valueInputOption: 'RAW', data: [] }, skipped: 'Could not find the day in the sheet' } };\nconst col = name => { const k = m.headers.findIndex(x => x.trim().toLowerCase() === name.toLowerCase()); return k < 0 ? null : String.fromCharCode(65 + k); };\nconst data = [];\nconst set = (name, v) => { const c = col(name); if (c && v != null && v !== '') data.push({ range: \"'\" + m.sheet_title + \"'!\" + c + p.row_number, values: [[v]] }); };\nfor (const [k, v] of Object.entries(p.feedback.sheet || {})) set(k, v);\nconst { sheet, ...stored } = p.feedback;\nset('Feedback (JSON)', JSON.stringify(stored));\nreturn { json: { body: { valueInputOption: 'RAW', data } } };"
+      },
+      "name": "Feedback cells",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3520,
+        100
+      ],
+      "id": "04d26216-7bde-4719-8a68-442fb4d10cc2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $('Config').first().json.teacher_sheet_id + '/values:batchUpdate' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {}
+      },
+      "name": "Sheets: write feedback",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3740,
+        100
+      ],
+      "credentials": {
+        "googleOAuth2Api": {
+          "name": "Google account"
+        }
+      },
+      "id": "a8511779-f62d-4ee7-ae29-66a81848c780"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $('Combine (ElevenLabs first)').item.json.replan === true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "name": "Replan needed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3960,
+        100
+      ],
+      "id": "91456acd-0a6c-4c75-ab67-8ea4087bc3a0"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const c = $('Config').first().json, m = $('Match rows').item.json, p = $('Combine (ElevenLabs first)').item.json;\nreturn { json: { teacher_email: c.teacher_email, sheet_id: c.teacher_sheet_id, sheet_url: 'https://docs.google.com/spreadsheets/d/' + c.teacher_sheet_id + '/edit',\n  sheet_title: m.sheet_title, sheet_gid: m.sheet_gid, headers: m.headers, rows: m.rows, updated_folder_id: m.updated_folder_id,\n  row_number: p.row_number, feedback: p.feedback, make_easier: p.make_easier } };"
+      },
+      "name": "Replan input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4180,
+        0
+      ],
+      "id": "5d750f35-af2e-4353-afc1-8e9854e9da1c"
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "fb2v2ReplanLite01",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "name": "Run 1.3 Update the next days' plan",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4400,
+        0
+      ],
+      "id": "86712e29-077f-45b4-936c-95f886aaecd6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e1",
+              "name": "el",
+              "type": "object",
+              "value": "={{ (() => { const d = $('Prepare call').item.json.collected_data || {}; return { day_number: d.day_number ?? null, topic: d.topic ?? null, class_happened: d.class_happened ?? null, completed: d.completed ?? null, group_a_result: d.group_a_result ?? null, group_b_result: d.group_b_result ?? null, group_c_result: d.group_c_result ?? null, what_went_well: d.what_went_well ?? null, what_went_wrong: d.what_went_wrong ?? null, how_to_improve: d.how_to_improve ?? null, what_is_left: d.what_is_left ?? null, other_notes: d.other_notes ?? null }; })() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "ElevenLabs data (direct)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2420,
+        -20
+      ],
+      "id": "98939888-b6ca-412c-acd2-dd2a0772b1f1"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// AgenticOrg reply -> same 12 keys as the voice agent (empty object if it failed).\nlet o = $json.output;\nif (typeof o === 'string') { try { o = JSON.parse(o.replace(/^[^{]*/, '').replace(/[^}]*$/, '')); } catch { o = null; } }\no = o && typeof o === 'object' ? o : {};\nreturn { json: { ao: o, ao_status: $json.status || $json.detail || null } };"
+      },
+      "name": "AgenticOrg data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        220
+      ],
+      "id": "9c4db55f-85d7-4f9d-9a26-bece3a194a8f"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "name": "Merge both",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        2860,
+        100
+      ],
+      "id": "ef3bfb3f-f310-4a89-b0ab-add6acb929e7"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// ElevenLabs answers win. AgenticOrg only fills fields ElevenLabs left empty.\nconst KEYS = [\"day_number\",\"topic\",\"class_happened\",\"completed\",\"group_a_result\",\"group_b_result\",\"group_c_result\",\"what_went_well\",\"what_went_wrong\",\"how_to_improve\",\"what_is_left\",\"other_notes\"];\nconst el = $json.el || {}, ao = $json.ao || {};\nconst has = v => v !== null && v !== undefined && String(v).trim() !== '';\nconst fb = {}, source = {};\nfor (const k of KEYS) { if (has(el[k])) { fb[k] = el[k]; source[k] = 'elevenlabs'; } else if (has(ao[k])) { fb[k] = ao[k]; source[k] = 'agenticorg'; } else { fb[k] = null; } }\nconst cap = s => has(s) ? String(s).trim().replace(/_/g, ' ').replace(/^./, c => c.toUpperCase()).replace(/^(No class|Not taught)$/i, m => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()) : null;\nfor (const k of ['completed', 'group_a_result', 'group_b_result', 'group_c_result']) fb[k] = cap(fb[k]);\nif (fb.class_happened === false || fb.class_happened === 'false') fb.completed = 'No class';\nconst call = $('Prepare call').item.json, m = $('Match rows').item.json;\nfb.next_step = fb.completed === 'No class' ? 'none' : fb.completed === 'No' ? 'repeat_day'\n  : (fb.completed === 'Partly' || has(fb.how_to_improve)) ? 'replan_topic' : 'move_on';\nfb.pending = Array.isArray(ao.pending) && ao.pending.length ? ao.pending : (has(fb.what_is_left) ? [{ group: null, what: fb.what_is_left }] : []);\nfb.call_date = call.call_date; fb.conversation_id = call.conversation_id; fb.source = source;\n// Find the row: exact day first, then the first open row of the topic.\nconst norm = s => String(s || '').toLowerCase().replace(/[^0-9a-z]/g, '');\nlet row = m.rows.find(r => norm(r.day) === norm(fb.day_number));\nif (!row && has(fb.topic)) row = m.rows.find(r => !r.completed && norm(r.topic).includes(norm(fb.topic).replace(/^t\\d+/, '')));\nif (row) { fb.day_number = row.day; fb.topic = row.topic; }\n// Plan rule: No = repeat the day; a second No on the same day = easier version.\nconst secondNo = fb.next_step === 'repeat_day' && row && /^no$/i.test(String(row.completed).trim());\nfb.sheet = { 'Completed': fb.completed, 'What went well': fb.what_went_well, 'What went wrong': fb.what_went_wrong,\n  'How to improve': fb.how_to_improve, 'What is left': fb.what_is_left, 'Reported on': fb.call_date };\nreturn { json: { feedback: fb, row_number: row ? row.row_number : null, day: fb.day_number, topic: fb.topic,\n  replan: !!row && (fb.next_step === 'replan_topic' || secondNo), make_easier: !!secondNo, agenticorg_status: $json.ao_status } };"
+      },
+      "name": "Combine (ElevenLabs first)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3080,
+        100
+      ],
+      "id": "f51a47cb-ba17-459e-8ba4-a63b8bf446b8"
+    }
+  ],
+  "connections": {
+    "Every minute": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test now": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "ElevenLabs: list calls",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ElevenLabs: list calls": {
+      "main": [
+        [
+          {
+            "node": "New finished calls",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New finished calls": {
+      "main": [
+        [
+          {
+            "node": "ElevenLabs: get call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ElevenLabs: get call": {
+      "main": [
+        [
+          {
+            "node": "Prepare call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare call": {
+      "main": [
+        [
+          {
+            "node": "Sheet: info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheet: info": {
+      "main": [
+        [
+          {
+            "node": "Sheet: read rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheet: read rows": {
+      "main": [
+        [
+          {
+            "node": "Drive: sheet folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive: sheet folder": {
+      "main": [
+        [
+          {
+            "node": "Drive: find Updated plans",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Drive: find Updated plans": {
+      "main": [
+        [
+          {
+            "node": "Match rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match rows": {
+      "main": [
+        [
+          {
+            "node": "ElevenLabs data (direct)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AgenticOrg: structure feedback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AgenticOrg: structure feedback": {
+      "main": [
+        [
+          {
+            "node": "AgenticOrg data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Feedback cells": {
+      "main": [
+        [
+          {
+            "node": "Sheets: write feedback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets: write feedback": {
+      "main": [
+        [
+          {
+            "node": "Replan needed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replan needed?": {
+      "main": [
+        [
+          {
+            "node": "Replan input",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Replan input": {
+      "main": [
+        [
+          {
+            "node": "Run 1.3 Update the next days' plan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ElevenLabs data (direct)": {
+      "main": [
+        [
+          {
+            "node": "Merge both",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AgenticOrg data": {
+      "main": [
+        [
+          {
+            "node": "Merge both",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge both": {
+      "main": [
+        [
+          {
+            "node": "Combine (ElevenLabs first)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine (ElevenLabs first)": {
+      "main": [
+        [
+          {
+            "node": "Feedback cells",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "activeVersionId": "1f6001d8-5cba-468f-8c39-83064dad88d5",
+  "versionCounter": 14,
+  "sourceWorkflowId": null,
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}
