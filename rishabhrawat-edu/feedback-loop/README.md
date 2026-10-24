@@ -13,8 +13,8 @@ The teacher talks to an ElevenLabs voice agent after class. n8n picks up the cal
    - **Merge both → Combine (ElevenLabs first)**: every ElevenLabs value wins; AgenticOrg only fills fields ElevenLabs left empty. The Feedback (JSON) column records the source of each field
    - writes columns 9-15 of that day's row: Completed, What went well, What went wrong, How to improve, What is left, Reported on, Feedback (JSON)
    - follows the plan's rules: Yes = move on; No = she repeats the day (no change); a second No on the same day = an easier version of that day; Partly or a change request = replan the rest of the topic
-- **n8n "1.3 Update the next days' plan from the feedback"**: picks the days it may change (rest of the topic, or the next topic after a topic's last day), replans them, saves new Docs in "Updated plans", updates the sheet rows, then starts 1.4. How it works inside: `replanner-v2.md`. The first version is kept as "Old 1.3 Update the next days' plan (first version, not used)" (prompts in `n8n-replanner-prompts.md`).
-- **n8n "1.4 Email the teacher what changed in the plan"**: a short plain-text email: what she told us (one line), what changed (one line per day), and the sheet link.
+- **n8n "1.3 Update the next days' plan from the feedback"**: picks the days it may change (rest of the topic, or the next topic after a topic's last day), replans them, saves new Docs in "Updated plans", updates the sheet rows, then starts 1.4. How it works inside: `replanner-v2.md`. Its prompts: `prompts/`. The first version is kept as "Old 1.3 Update the next days' plan (first version, not used)" (prompts in `n8n-replanner-prompts.md`).
+- **n8n "1.4 Email the teacher what changed in the plan"**: a short plain-text email, subject "Your plan is updated after Day N": what she told us, one line per changed day, and the sheet link (template: `prompts/1.4-email.md`).
 
 ## Settings (the "Config" node in 1.2)
 

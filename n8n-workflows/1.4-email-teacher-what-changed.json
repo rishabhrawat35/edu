@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:34:13.735Z",
+  "updatedAt": "2026-10-24T13:29:50.000Z",
   "createdAt": "2026-10-24T10:54:54.890Z",
   "id": "5giLvDE32xGkS9jB",
   "name": "1.4 Email the teacher what changed in the plan",
@@ -22,7 +22,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Simple plain-text email. Input: teacher_email, sheet_url, day, topic, feedback_summary, changes[]\nconst j = $json;\nconst changes = (j.changes || []).slice(0, 4).map(c => '- ' + c).join('\\n');\nconst subject = 'Your maths plan is updated (Day ' + j.day + (j.topic ? ', ' + j.topic : '') + ')';\nconst body = [\n  'Hi,',\n  '',\n  'Thank you for telling us how Day ' + j.day + ' went.',\n  '',\n  'What you told us: ' + j.feedback_summary,\n  '',\n  'What we changed:',\n  changes || '- Nothing needed to change.',\n  '',\n  'Your full plan is here: ' + j.sheet_url,\n  '',\n  'Thanks,',\n  'Your maths helper',\n].join('\\n');\nconst raw = [\n  'To: ' + j.teacher_email,\n  'Subject: =?UTF-8?B?' + Buffer.from(subject).toString('base64') + '?=',\n  'Content-Type: text/plain; charset=UTF-8',\n  '',\n  body,\n].join('\\r\\n');\nreturn [{ json: { subject, body, raw: Buffer.from(raw).toString('base64').replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '') } }];"
+        "jsCode": "// Simple plain-text email. Input: teacher_email, sheet_url, day, topic, feedback_summary, changes[]\nconst j = $json;\nconst changes = (j.changes || []).slice(0, 4).map(c => '- ' + c).join('\\n');\nconst subject = 'Your plan is updated after Day ' + j.day + (j.topic ? ' (' + j.topic + ')' : '');\nconst body = [\n  'Hi,',\n  '',\n  'Thanks for telling us how Day ' + j.day + ' went.',\n  '',\n  'You told us: ' + j.feedback_summary,\n  '',\n  'What changes:',\n  changes || '- No changes were needed.',\n  '',\n  'Your sheet has the new plans. Open them from the Plan column: ' + j.sheet_url,\n  '',\n  'Your maths helper',\n].join('\\n');\nconst raw = [\n  'To: ' + j.teacher_email,\n  'Subject: =?UTF-8?B?' + Buffer.from(subject).toString('base64') + '?=',\n  'Content-Type: text/plain; charset=UTF-8',\n  '',\n  body,\n].join('\\r\\n');\nreturn [{ json: { subject, body, raw: Buffer.from(raw).toString('base64').replace(/\\+/g, '-').replace(/\\//g, '_').replace(/=+$/, '') } }];"
       },
       "name": "Write email",
       "type": "n8n-nodes-base.code",
@@ -85,8 +85,8 @@
   },
   "settings": {},
   "nodeGroups": [],
-  "activeVersionId": "4f5a83eb-f589-4bb1-864f-522d1372074a",
-  "versionCounter": 1,
+  "activeVersionId": "214992af-9c37-41b1-82f1-d54d40b6227b",
+  "versionCounter": 2,
   "sourceWorkflowId": null,
   "versionMetadata": {
     "name": null,

@@ -1,4 +1,4 @@
-# n8n replanning agent prompts
+# Old 1.3 replanner prompts (first version, not used; current prompts are in prompts/)
 
 These are the prompts inside the n8n workflow "Old 1.3 Update the next days' plan (first version, not used)". Kept here so they can be reviewed and edited.
 
