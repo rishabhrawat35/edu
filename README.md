@@ -97,11 +97,14 @@ This is a first version, built to be tested with teachers.
 
 If you teach, run a school or work in education, your feedback would help. Please open an issue or get in touch.
 
+**Want to build this for another subject or class?** Read [METHODOLOGY.md](METHODOLOGY.md). It explains the design decisions, the multi-agent framework used to build the curriculum, how the Drive and sheet are made, and how to reuse the feedback loop.
+
 ## What's in this repository
 
 | Folder | Contents |
 |---|---|
 | `rishabhrawat-edu/maths-curriculum/` | The curriculum data (strands, levels, activities, groups, 150-day plan), the research notes and the check reports |
+| `METHODOLOGY.md` | How the system was built and how to reuse it for another subject |
 | `rishabhrawat-edu/curriculum-builder/` | A reusable kit to build the same kind of curriculum for another subject or language |
 | `drive-build/` | The 150 day plans as HTML and the teacher sheet rows used to build the Google Drive copy |
 | `rishabhrawat-edu/feedback-loop/` | How the daily loop works, plus the voice agent and AgenticOrg agent prompts |
