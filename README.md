@@ -1,106 +1,124 @@
-# One-room maths plan
+# One plan for a one-room school
 
-A daily maths plan for a teacher who teaches grades 1 to 5 in one room, which updates itself from a 3-minute call after class.
+A daily maths plan for a teacher who teaches Classes 1 to 5 in one room. The plan updates itself after a short phone call at the end of each class.
 
 ## The problem
 
-In many village schools, one teacher teaches grades 1 to 5 together. Textbooks are written one grade at a time, and most children are below their grade level. The teacher needs one plan she can run from a blackboard, with work for every child, and a plan that changes when a lesson doesn't land.
+In many government primary schools in rural Uttarakhand, one teacher teaches Classes 1 to 5 in a single room: thirty children, five grades, one maths period and one blackboard.
 
-## How it works
+1. **Five books, five sets of notes, one class.** To teach one period, she plans from five textbooks. While she teaches one grade, the other four wait.
+2. **No integrated plan.** Every textbook is written for one grade. Nothing shows her how to teach all five grades together, on one topic, in the same period.
+3. **No differentiated learning.** Children in the same grade are at very different levels. A Class 4 child may still be counting to 20. Teaching every child at their level means knowing each day what worked and changing the next lesson to match. Today, neither happens.
 
-The class is split into three groups by level, not by grade: **Group A (Beginning)**, **Group B (Middle)** and **Group C (Advanced)**. Each day the whole room works on one topic, and each group gets its own task. The plan is numbered by day (Day 1 to Day 150), not by date, so the teacher sets the pace.
+She cannot fix this alone. She barely has time to teach from five books, let alone rewrite the plan after every class. She was also never trained to plan for a room with many grades and many levels.
+
+## The idea
+
+Two ideas, combined:
+
+- **Integrated learning.** One plan for the whole room. Every child studies the same topic on the same day, such as place value, at a difficulty that suits them.
+- **Differentiated learning.** Each child gets work that matches where they are today. That needs feedback from the teacher every day, and a plan that adjusts to it.
+
+This first version does both for Maths, Classes 1 to 5. The room is split into three groups by level, not by grade: **Group A (Beginning)**, **Group B (Middle)** and **Group C (Advanced)**. Each day has one topic, one task per group, and a plan the teacher can run from a blackboard. After class, a three-minute call updates the coming days.
+
+## How it works, day to day
 
 ```
- Teacher teaches Day N from her Google Sheet
-        │
-        ▼
- She calls the ElevenLabs voice agent (about 3 minutes)
-   "Which day and topic? Yes, partly or no? How did each group do?
-    What went well, what went wrong, what should change, what is left?"
-        │
-        ▼
- n8n 1.2  reads the call, merges the voice agent's answers with the
-          AgenticOrg agent's version (voice answers win), and writes the
-          feedback into Day N's row of her sheet
-        │  only if the day was "Partly" or she asked for a change
-        ▼
- n8n 1.3  rewrites the rest of that topic's days: unfinished work first,
-          checked against the teaching rules and by an AgenticOrg
-          challenger; saves new plan Docs and updates the sheet
-        │
-        ▼
- n8n 1.4  emails her a short note: what she said, what changed, sheet link
+ 1. The teacher opens her Google Sheet and teaches Day N.
+ 2. After class she talks to a voice agent for about three minutes:
+    which day and topic, yes / partly / no for each group,
+    what went well, what went wrong, what should change, what is left.
+ 3. Her answers are written into Day N's row of the sheet.
+ 4. If the day was only partly done, or she asked for a change,
+    the rest of that topic is replanned. Unfinished work comes first.
+ 5. She gets a short email: what she said, what changed, and the sheet link.
 ```
 
-Rules the system follows:
-- **Yes**: move on to the next day.
-- **No**: she repeats the day as it is. A second "No" on the same day makes an easier version of it.
-- **Partly**, or she asks for a change: only the remaining days of the current topic are replanned (or the next topic's days, if it was the last day of a topic). Unfinished work goes first. At most one extra day is added, such as "12a".
-- Activities only come from the reviewed Activities list. Group A work is always spoken or hands-on.
+The plan follows simple rules:
 
-## What the teacher sees
+- **Yes:** she moves on to the next day.
+- **No:** she repeats the same day. A second "No" on the same day produces an easier version of it.
+- **Partly, or a change request:** only the remaining days of the current topic are rewritten. If it was the topic's last day, the next topic's days are rewritten instead. At most one extra day is added (for example "12a").
+- **Silence:** if she does not call, the plan stays as it is. Nothing blocks her next class.
 
-Her Google Sheet has one row per day, with these columns:
+Her sheet has one row per day: Day, Topic, the task for each group, a link to the day's plan, whether the plan is original or updated (with a link to the original), and her feedback (Completed, What went well, What went wrong, How to improve, What is left, Reported on, and the full feedback as JSON).
 
-| # | Column | Filled by |
-|---|---|---|
-| 1-5 | Day, Topic, Group A today, Group B today, Group C today | the plan |
-| 6 | Plan | link to the day's plan Doc (switches to the updated Doc after a replan) |
-| 7 | Plan status | "Original", "Updated YYYY-MM-DD" or "Added YYYY-MM-DD" |
-| 8 | Original plan | link to the first version, once a day is replanned |
-| 9 | Completed | Yes / Partly / No / No class |
-| 10-13 | What went well, What went wrong, How to improve, What is left | her call |
-| 14 | Reported on | date of the call |
-| 15 | Feedback (JSON) | the full structured feedback, with where each answer came from |
+## What makes it work
 
-## Folder map
+The system has two parts. Each has its own checks, so that no lesson reaches the teacher unverified.
 
-| Folder | What's inside |
+### 1. Building the curriculum (done once)
+
+- **Research:** learning outcomes, multi-grade teaching practice and the current NCERT textbooks were collected first.
+- **Skill ladders:** maths was split into 5 strands (Numbers and Place Value, Operations, Shapes and Space, Measurement, Data Handling and Patterns) and **57 skill levels**, ordered from easiest to hardest. Each level is one skill a teacher can check in minutes, such as "counts objects up to 20". Each level is linked to a learning outcome, a NIPUN Bharat goal where one applies, its prerequisite level and a Bloom's level.
+- **Activities:** **172 activities**, three to four per level, each using what a village classroom has: a blackboard, slates, stones, sticks and bottle caps.
+- **Plans:** **150 day plans** grouped into 42 topic blocks. Each day has a shared opening for the whole room, a rotation for the teacher, one activity per group, and one concrete check question per group.
+- **Checks:** the design passes 8 checks before plans are built (outcome coverage, prerequisite chains with no loops, spacing between groups, level count, Bloom's spread, textbook alignment, subject accuracy and language). The finished plans pass 11 more (every level and activity is used, every activity exists and matches its level, groups are never on the same level, Group A work is always spoken or hands-on, materials and time fit a real classroom, and nothing from another subject slips in).
+
+### 2. The daily loop (runs after every call)
+
+- **Two readings of every call.** The voice agent records 12 structured answers. An AgenticOrg agent reads the full transcript and returns the same 12 fields, plus the unfinished work per group. The two are merged: the teacher's direct answers always win, and the second reading only fills gaps.
+- **Topic-level replanning.** Only the days of the current topic are touched, which keeps changes small and quick to review. The replanner works in steps:
+  1. **Gather:** reads the day plans, the activity list and the skill ladder.
+  2. **Diagnose:** works out what went wrong and for which group.
+  3. **Plan:** chooses levels and activities, using only IDs from the reviewed activity list.
+  4. **Rule check:** code checks every rule above. If a plan fails twice, the old plan is kept and the project owner is told.
+  5. **Challenge:** a separate AgenticOrg agent reviews the plan and can send it back once.
+  6. **Write:** turns the plan into a teacher-ready Doc, copying activity steps word for word.
+- **Close the loop.** New plans are saved as Docs, the sheet rows are updated, and the teacher gets a short, plain email.
+
+## What it is built on
+
+### Teaching approaches
+
+- **Multi-grade, multi-level teaching (MGML).** The core rules come from Parthajeet Das's writing on multi-grade classrooms: slow the syllabus down without lowering the standard, group children by level rather than grade, keep working with children who are behind, give teachers ready materials instead of asking them to build plans from textbooks, and use assessment only to decide what to teach next.
+- **Rishi Valley "School in a Box" (RiVER).** The idea of a "ladder of learning": an ordered set of steps that each child climbs at their own pace, with a teacher who guides rather than lectures.
+- **Teaching at the Right Level (TaRL).** A short check of where children are, grouping by that level, and moving a child up only after they show mastery.
+- **Mastery before moving on.** A group moves to the next level when the current one is secure, not because the calendar moved.
+- **Bloom's taxonomy.** Every level is tagged as remember, understand, apply or analyse, so each topic builds from recall to reasoning.
+
+### Guidelines and classroom constraints
+
+- **NCERT Learning Outcomes (2017)** for Classes 1 to 5. Each level is mapped to an outcome code.
+- **NIPUN Bharat** foundational numeracy goals for the early grades.
+- **NCERT's current maths textbooks (NCF 2023 series)** for Classes 1 to 5, used to check that the ladder covers what each grade is expected to learn.
+- **The real classroom:** one teacher, one blackboard, one maths period of about 45 minutes, and no printed worksheets. Each day has a short opening for the whole room, then three guided blocks while the other two groups practise on their own.
+- **Group A works orally or with objects.** Most children in this group cannot read yet.
+- **Three groups, never more.** One teacher cannot run six groups in one period.
+
+## Where it stands
+
+This is a first version, built to be tested with teachers.
+
+- The content is built from NCERT books in English. Hindi steps still need to be written.
+- The learning outcome codes are paraphrased from the 2017 document, because the full text could not be retrieved. They need checking against the original.
+- Every activity has so far been reviewed only by an AI acting as a teacher. A real teacher must review each one before classroom use.
+- Each class's starting level comes from a default for now. A short starting check for the room is the next step.
+
+If you teach, run a school or work in education, your feedback would help. Please open an issue or get in touch.
+
+## What's in this repository
+
+| Folder | Contents |
 |---|---|
-| `rishabhrawat-edu/maths-curriculum/` | The curriculum: `output/` has strands, 57 skill levels, 172 activities, 3 groups and the 150-day plan as CSV files. `research/` has the teaching rules and reviews, `docs/` explains the columns, and `mvp-tasks.md` is the original product plan. |
-| `rishabhrawat-edu/curriculum-builder/` | A reusable kit (agent prompts, schemas, checklists) for building the same kind of curriculum for another subject or language. |
-| `drive-build/` | The 150 day plans as HTML (`docs/`), the topic list (`topics.json`), and the teacher sheet rows (`template150.csv`, `demo150.csv`) used to build the Google Drive copy. `gen.py` and `sheet.py` regenerate them from the CSVs. |
-| `rishabhrawat-edu/feedback-loop/` | How the feedback loop works (`README.md`), the voice agent prompt (`elevenlabs-feedback-agent-prompt.md`, `elevenlabs-agent-fixes.md`), the AgenticOrg agent prompt (`agenticorg-system-prompt.txt`) and the replanner design (`replanner-v2.md`). |
-| `n8n-workflows/` | Exports of the four live n8n workflows (1.1 to 1.4). Credentials are not included. |
-| `landing-page/` | A ready prompt and full copy for building the project's landing page on Replit. |
-| `agenticorg_test.py` | A small script to check that an AgenticOrg API key and agent work. |
+| `rishabhrawat-edu/maths-curriculum/` | The curriculum data (strands, levels, activities, groups, 150-day plan), the research notes and the check reports |
+| `rishabhrawat-edu/curriculum-builder/` | A reusable kit to build the same kind of curriculum for another subject or language |
+| `drive-build/` | The 150 day plans as HTML and the teacher sheet rows used to build the Google Drive copy |
+| `rishabhrawat-edu/feedback-loop/` | How the daily loop works, plus the voice agent and AgenticOrg agent prompts |
+| `n8n-workflows/` | The four live automation workflows (1.1 reminder, 1.2 read the call, 1.3 replan, 1.4 email), without credentials |
+| `landing-page/` | The brief and copy for the project's landing page |
 
-## The n8n workflows
+## Run it yourself
 
-| Workflow | What it does |
-|---|---|
-| 1.1 Remind the teacher at 2 pm to call about today's class | At 2 pm, Monday to Saturday, emails her the call link if she hasn't called today (off by default). |
-| 1.2 Read the feedback call and save it in the teacher sheet | Every minute, picks up finished calls and saves the feedback in her sheet. Starts 1.3 when needed. |
-| 1.3 Update the next days' plan from the feedback | Replans the topic's remaining days and saves new Docs and sheet changes. Starts 1.4. |
-| 1.4 Email the teacher what changed in the plan | Sends the short update email. |
+You need Docker, a Google account, an ElevenLabs account, an AgenticOrg account and an OpenAI API key.
 
-## Set it up yourself
-
-You need Docker, a Google account, an ElevenLabs account, an AgenticOrg account and an OpenAI or OpenRouter API key.
-
-1. **Run n8n locally.**
+1. Start n8n:
    ```bash
-   docker run -d --name n8n --restart unless-stopped -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n:latest
+   docker run -d --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n:latest
    ```
-   Open http://localhost:5678 and create your account.
-2. **Connect Google.** In Google Cloud, create a project, turn on the Gmail, Sheets, Docs and Drive APIs, and create an OAuth client (type "Web application") with the redirect URL `http://localhost:5678/rest/oauth2-credential/callback`. In n8n, add a "Google OAuth2 API" credential with that client and these scopes: `gmail.modify spreadsheets documents drive`.
-3. **Add the other credentials in n8n:** an ElevenLabs credential, a "Header Auth" credential named `AgenticOrg API key` (name `Authorization`, value `Bearer <your AgenticOrg key>`) and an OpenAI credential.
-4. **Install the ElevenLabs node.** In n8n, open the node panel, search "ElevenLabs" and click Install.
-5. **Create the agents.**
-   - ElevenLabs: a conversational agent with the prompt, first message and 12 data-collection fields in `rishabhrawat-edu/feedback-loop/elevenlabs-agent-fixes.md`. Turn on End call and Language detection.
-   - AgenticOrg: an agent with `rishabhrawat-edu/feedback-loop/agenticorg-system-prompt.txt` as its system prompt.
-6. **Build the Drive copy.** Upload each `drive-build/docs/dayNNN.html` as a Google Doc into one folder per topic (see `topics.json`), and create the teacher sheet from `drive-build/template150.csv` in a tab named "Plan", adding a 15th column, "Feedback (JSON)". Put an empty "Updated plans" folder next to the teacher sheet.
-7. **Import the workflows.** In n8n, import the four files in `n8n-workflows/`, pick your credentials in each node, and set the **Config** node in 1.2 (and 1.1): ElevenLabs agent ID, AgenticOrg agent ID, teacher sheet ID and teacher email. In 1.3, set its Config too (challenger agent and admin email).
-8. **Turn on** 1.2, 1.3 and 1.4 (and 1.1 if you want the reminder). Make a test call to the ElevenLabs agent, and within a minute the Day row in the sheet fills in.
+2. In n8n, add credentials for Google (Gmail, Sheets, Docs, Drive), ElevenLabs, AgenticOrg (Header Auth: `Authorization: Bearer <key>`) and OpenAI, then install the ElevenLabs community node.
+3. Create the ElevenLabs agent and the AgenticOrg agent from the prompts in `rishabhrawat-edu/feedback-loop/`.
+4. Upload the day plans in `drive-build/docs/` to Google Drive as Docs, and create the teacher sheet from `drive-build/template150.csv` (tab "Plan").
+5. Import the workflows in `n8n-workflows/`, choose your credentials, fill in the **Config** nodes (agent IDs, sheet ID, teacher email) and switch them on.
 
-To check your AgenticOrg key and agent on their own:
-```bash
-python3 -m venv .venv && .venv/bin/pip install agenticorg
-AGENTICORG_API_KEY=ao_sk_yourkey .venv/bin/python agenticorg_test.py
-```
-
-## Good to know
-
-- The content was built from NCERT books in English. Every activity has been reviewed only by an AI acting as a teacher; a real teacher must review it before classroom use, and Hindi steps still need to be added.
-- n8n reads calls after they end, so feedback lands about a minute after the call, not during it.
-- Keys and passwords are never stored in this repository. Add them only as n8n credentials.
+No keys or passwords are stored in this repository. Add them only as n8n credentials.
